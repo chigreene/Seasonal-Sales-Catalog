@@ -1,0 +1,14 @@
+.login h1{
+text-align:center;
+}
+
+/* can be changed later */
+.image-container{
+    background-color: red;
+    height:200px;
+    width:200px;
+}
+.seasons-img{
+display:flex;
+justify-content: center;
+}

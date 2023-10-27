@@ -1,0 +1,40 @@
+.banner{
+    margin:5% auto;
+    display:flex;
+    justify-content:space-evenly;
+}
+.banner a{
+    height:fit-content;
+}
+
+.season-nav ul {
+    display:flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+/* for visuals only can be removed later */
+.product div{
+    background-color:red;
+    width:400px;
+    height:400px;
+}
+.season-container{
+    padding:4%;
+}
+.product{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+
+
+/* For Flickity */
+/* values that can be played aroundn with later */
+.carousel-cell {
+    width: 80%;
+    height: 600px;
+    margin-right: 10px;
+    background-color:white;
+    overflow-y: auto;
+}
+
