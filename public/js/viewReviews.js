@@ -1,6 +1,6 @@
 
 document
-    .getElementById('showBtn')
+    .getElementById('sample-item')
     .addEventListener('click', function (event) {
         event.preventDefault();
         document.getElementById("reviewDiv").style.display = "block";
@@ -8,11 +8,11 @@ document
     });
 
 document
-    .getElementById('hideBtn')
-    .addEventListener('click', function (event) {
-        event.preventDefault()
-        document.getElementById("reviewDiv").style.display = "none";
-        document.querySelector(".item").classList.add("item-full-width");
-    });
+  .getElementById("sample-review")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("reviewDiv").style.display = "none";
+    document.querySelector(".item").classList.add("item-full-width");
+  });
 
     // test comment
