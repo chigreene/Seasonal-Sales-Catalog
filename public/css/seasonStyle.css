@@ -14,9 +14,37 @@
 }
 /* for visuals only can be removed later */
 .product div{
-    background-color:red;
+    
     width:400px;
     height:400px;
+    display: block;
+    overflow: auto;
+}
+
+.item {
+    background-color: green;
+    
+}
+.item-full-width {
+    
+    width: 100%
+}
+.review {
+    background-color: red;
+    
+    display: none;
+    
+}
+#sample-item{
+    background-color: gray; 
+    margin: 10px auto;
+    ;
+    width: 200px; 
+    height: 200px; 
+    justify-content: center;
+    align-items: center;
+
+    
 }
 .season-container{
     padding:4%;
@@ -25,6 +53,7 @@
     display:flex;
     justify-content: space-evenly;
 }
+
 
 
 
