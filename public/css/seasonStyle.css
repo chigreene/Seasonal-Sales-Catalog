@@ -15,23 +15,24 @@
 /* for visuals only can be removed later */
 .product div{
     
-    width:400px;
+    width:800px;
     height:400px;
     display: block;
-    overflow: auto;
+    
 }
 
 .item {
     background-color: green;
+    overflow-y: auto;
     
 }
 .item-full-width {
     
-    width: 100%
+    width: 500px;
 }
 .review {
     background-color: red;
-    
+    overflow-y: auto;
     display: none;
     
 }
