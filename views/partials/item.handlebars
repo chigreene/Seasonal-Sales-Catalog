@@ -1,6 +1,9 @@
-<div class="item-handlebars">
-  <div id="sample-item"></div>
-  <div id="sample-item"></div>
-  <div id="sample-item"></div>
-  <div id="sample-item"></div>
+<div>
+  {{#each items}}
+    <div class="inner-item-div" id="sample-item">
+      <h4>{{ name }}</h4>
+      <img src="/images/{{filename}}" alt="">
+    </div>
+  {{/each}}
+  </div>
 </div>

@@ -17,16 +17,34 @@
     
     width:800px;
     height:400px;
-    display: block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     
 }
 
 .item {
     background-color: green;
     overflow-y: auto;
-    width: 400px;
+    width: 300px;
     
 }
+.inner-item-div{
+    
+    margin: 10px auto;
+    width: 200px; 
+    height: 200px; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.inner-item-div img {
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+}
+
 .item-full-width {
     
     width: 800px;
@@ -34,17 +52,9 @@
 .review {
     background-color: red;
     overflow-y: auto;
-    width: 400px;
+    width: 300px;
     display: none;
     
-}
-#sample-item{
-    background-color: gray; 
-    margin: 10px auto;
-    width: 200px; 
-    height: 200px; 
-    justify-content: center;
-    align-items: center;
 }
 
 #sample-review{
