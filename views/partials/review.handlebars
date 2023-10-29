@@ -1,6 +1,11 @@
 <div class="review-handlebars">
-  <div id="sample-review"></div>
-  <div id="sample-review"></div>
-  <div id="sample-review"></div>
-  <div id="sample-review"></div>
+
+  {{#each reviews}}
+    <div class="inner-review-div">
+      <p>{{ review }}</p>
+      <li>{{ username }}</li>
+
+    </div>
+  {{/each}}
+
 </div>

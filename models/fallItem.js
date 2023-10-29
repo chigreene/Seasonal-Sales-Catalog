@@ -5,7 +5,7 @@ class FallItem extends Model { };
 
 FallItem.init(
     {
-        item_id: {
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true

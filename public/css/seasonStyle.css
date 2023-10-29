@@ -16,7 +16,7 @@
 .product{
     
     width:800px;
-    height:400px;
+    height:500px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -24,7 +24,7 @@
 }
 
 .item {
-    background-color: green;
+    background-color: lightslategray;
     overflow-y: auto;
     width: 400px;
     
@@ -32,11 +32,13 @@
 .inner-item-div{
     
     margin: 10px auto;
-    width: 200px; 
-    height: 200px; 
+    width: 300px; 
+    height: 350px;
+    padding: 20px; 
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
 }
 
 .inner-item-div img {
@@ -50,21 +52,18 @@
     width: 800px;
 }
 .review {
-    background-color: red;
+    background-color: darkorange;
     overflow-y: auto;
     width: 400px;
     display: none;
     
 }
 
-#sample-review{
-    background-color: gray; 
-    margin: 10px auto;
-    width: 200px; 
-    height: 200px; 
-    justify-content: center;
-    align-items: center; 
+.inner-review-div{
+    width: 80%;
+    margin: 20px auto;
 }
+
 .season-container{
     padding:4%;
 }
