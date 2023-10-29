@@ -3,7 +3,7 @@
     display:flex;
     justify-content:space-evenly;
 }
-.banner a{
+.banner button{
     height:fit-content;
 }
 
