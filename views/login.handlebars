@@ -1,17 +1,21 @@
+
 <seciton class="login">
-
-
-{{#if loggedIn}}
-{{> seasons}}
-{{else}}
-{{> seasonBanner}}
-<h1>YOU MUST LOGIN IN</h1>
-<article class="seasons-img">
-    {{!-- meant to represent which season you click on in the banner --}}
-    <div class="image-container">
-        <p>images will go here</p>
-        <img sr="">
+    {{#if loggedIn}}
+    {{> seasons}}
+    {{else}}
+    {{> seasonBanner}}
+    <h1>YOU MUST LOGIN IN</h1>
+{{!-- scroller of items in catalog --}}
+<div class="scroller-container">
+    <div class="scroller" data-direction="right" data-speed="slow">
+        <div class="scroller__inner">
+            <img src="/images/jackolantern.jpg" alt="" />
+            <img src="/images/reeses.jpg" alt="" />
+            <img src="/images/skeletons.jpg" alt="" />
+            <img src="/images/witches-hat.jpg" alt="" />
+        </div>
     </div>
-</article>
+</div>
+<script src="/js/scroller.js"></script>
 </seciton>
 {{/if}}

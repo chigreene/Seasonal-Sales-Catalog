@@ -13,38 +13,47 @@
     list-style-type: none;
 }
 /* for visuals only can be removed later */
-.product div{
+.product{
     
-    width:400px;
+    width:800px;
     height:400px;
     display: block;
-    overflow: auto;
+    
 }
 
 .item {
     background-color: green;
+    overflow-y: auto;
+    width: 400px;
     
 }
 .item-full-width {
     
-    width: 100%
+    width: 800px;
 }
 .review {
     background-color: red;
-    
+    overflow-y: auto;
+    width: 400px;
     display: none;
     
 }
 #sample-item{
     background-color: gray; 
     margin: 10px auto;
-    ;
     width: 200px; 
     height: 200px; 
     justify-content: center;
     align-items: center;
+}
 
-    
+#sample-review{
+    background-color: gray; 
+    margin: 10px auto;
+    width: 200px; 
+    height: 200px; 
+    justify-content: center;
+    align-items: center; 
 }
 .season-container{
     padding:4%;
