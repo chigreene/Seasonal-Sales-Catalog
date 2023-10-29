@@ -1,11 +1,12 @@
+
 <seciton class="login">
-<h1>YOU MUST LOGIN IN</h1>
-
-{{> seasonBanner}}
 
 
-</seciton>
-
+    {{#if loggedIn}}
+    {{> seasons}}
+    {{else}}
+    {{> seasonBanner}}
+    <h1>YOU MUST LOGIN IN</h1>
 {{!-- scroller of items in catalog --}}
 <div class="scroller-container">
     <div class="scroller" data-direction="right" data-speed="slow">
@@ -18,3 +19,6 @@
     </div>
 </div>
 <script src="/js/scroller.js"></script>
+    </article>
+</seciton>
+{{/if}}
