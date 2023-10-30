@@ -1,4 +1,16 @@
-<div class="review-handlebars">
+<div id="review1" class="review-handlebars">
+
+  {{#each reviews}}
+    <div class="inner-review-div">
+      <p>{{ review }}</p>
+      <li>{{ username }}</li>
+
+    </div>
+  {{/each}}
+
+</div>
+
+<div id="review2" class="review-handlebars">
 
   {{#each reviews}}
     <div class="inner-review-div">
