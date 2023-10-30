@@ -1,8 +1,14 @@
 <div>
   {{#each items}}
-    <div class=" inner-item-div" id="{{cssItemId}}">
+    <div class=" inner-item-div">
       <h4>{{ name }}</h4>
-      <img src="/images/{{filename}}" alt="dataBase Image">
+      <img id="{{cssItemId}}" class="custom-hover" src="/images/{{filename}}" alt="dataBase Image">
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addReview">
+        Add review
+      </button>
     </div>
+    
+    
   {{/each}}
   </div>

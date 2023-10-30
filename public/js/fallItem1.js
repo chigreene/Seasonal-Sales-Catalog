@@ -1,11 +1,16 @@
 document
     .getElementById('fallItem1')
     .addEventListener('click', function (event) {
-        event.preventDefault();
+      event.preventDefault();
+      //   removes other item reviews
         document.getElementById("review2").style.display = "none";
-        document.getElementById("sampleClick").style.display = "block";
-        document.getElementById("review1").style.display = 'block';
-        document.getElementById("itemClick").classList.remove("item-full-width");
+        document.getElementById("review3").style.display = "none";
+
+        
+    // renders clicked items reviews
+      document.getElementById("sampleClick").style.display = "block";
+      document.getElementById("review1").style.display = "block";
+      document.getElementById("itemClick").classList.remove("item-full-width");
     });
 
 document

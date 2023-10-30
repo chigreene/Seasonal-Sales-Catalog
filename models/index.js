@@ -2,6 +2,7 @@ const FallItem = require('./fallItem');
 const User = require('./user');
 const FallReview = require('./fallReview')
 const Reeses = require('./reeses')
+const Skeleton = require('./skeleton')
 
 User.hasMany(FallReview, {
   foreignKey: "UserReference_id",
@@ -21,5 +22,14 @@ Reeses.belongsTo(User, {
   foreignKey: "UserReference_id",
 });
 
+User.hasMany(Skeleton, {
+  foreignKey: "UserReference_id",
+  onDelete: "CASCADE",
+});
 
-module.exports = { User, FallItem, FallReview, Reeses };
+Skeleton.belongsTo(User, {
+  foreignKey: "UserReference_id",
+});
+
+
+module.exports = { User, FallItem, FallReview, Reeses, Skeleton };

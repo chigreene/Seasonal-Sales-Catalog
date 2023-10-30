@@ -27,6 +27,7 @@
     background-color: lightslategray;
     overflow-y: auto;
     width: 400px;
+    transition: 0.5s ease;
     
 }
 .inner-item-div{
@@ -51,12 +52,32 @@
     
     width: 800px;
 }
+
+.custom-hover{
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+.custom-hover:hover{
+    opacity: .5;
+    cursor: pointer;
+}
 .review {
     background-color: darkorange;
     overflow-y: auto;
     width: 400px;
     display: none;
+    transition: 0.5s ease;
     
+}
+
+.review:hover{
+    cursor: pointer;
+}
+.reviewClose {
+    text-align: center;
+    padding: 5px;
+    background-color: black;
+    color: darkorange;
 }
 #review1{
     display: none;

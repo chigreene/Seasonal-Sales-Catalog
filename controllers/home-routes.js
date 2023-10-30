@@ -1,6 +1,7 @@
 const FallItem = require('../models/fallItem');
 const FallReview = require('../models/fallReview');
-const Reeses = require('../models/reeses')
+const Reeses = require('../models/reeses');
+const Skeleton = require('../models/skeleton')
 
 const router = require('express').Router();
 
@@ -28,10 +29,18 @@ router.get('/', async (req, res) => {
             })
         })
 
+        const skeletonData = await Skeleton.findAll();
+        const skeletonReviews = skeletonData.map((skeleton) => {
+            return skeleton.get({
+                plain: true
+            })
+        })
+
         res.render('login', {
             items,
             reviews,
             reesesReviews,
+            skeletonReviews,
             loggedIn: req.session.loggedIn,
         }); 
     } catch (err) {

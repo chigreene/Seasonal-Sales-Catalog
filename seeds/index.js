@@ -1,10 +1,11 @@
 const sequelize = require("../config/connection.js");
-const { User, FallItem, FallReview, Reeses } = require("../models");
+const { User, FallItem, FallReview, Reeses, Skeleton } = require("../models");
 
 const userSeeds = require("./userSeeds.json");
 const fallItemSeeds = require("./fallItemSeeds.json");
 const fallReviewSeeds = require('./fallReviewSeeds.json');
 const reesesReviewSeeds = require('./reesesReviewSeeds.json')
+const skeletonReviewSeeds = require('./skeletonReviewSeeds.json')
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -24,6 +25,10 @@ const seedAll = async () => {
     individualHooks: true,
     returning: true,
   });
+  await Skeleton.bulkCreate(skeletonReviewSeeds, {
+    individualHooks: true,
+    returning: true
+  })
   process.exit(0);
 };
 
