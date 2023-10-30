@@ -1,18 +1,22 @@
 [
   {
     "name": "Jack-O-Lantern",
-    "filename": "jackolantern.jpg"
+    "filename": "jackolantern.jpg",
+    "cssItemId": "fallItem1"
   },
   {
     "name": "Reese's Candy",
-    "filename": "reeses.jpg"
+    "filename": "reeses.jpg",
+    "cssItemId": "fallItem2"
   },
   {
     "name": "Skeleton Decoration",
-    "filename": "skeletons.jpg"
+    "filename": "skeletons.jpg",
+    "cssItemId": "fallItem3"
   },
   {
     "name": "Witches Costume Hat",
-    "filename": "witches-hat.jpg"
+    "filename": "witches-hat.jpg",
+    "cssItemId": "fallItem4"
   }
 ]
