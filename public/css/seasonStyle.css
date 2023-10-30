@@ -59,7 +59,10 @@
     
 }
 #review1{
-    
+    display: none;
+}
+#review2{
+    display: none;
 }
 
 .inner-review-div{
