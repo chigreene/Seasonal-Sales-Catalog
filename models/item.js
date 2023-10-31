@@ -7,6 +7,7 @@ Item.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -25,10 +26,6 @@ Item.init(
     filename: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    review_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
     },
   },
   {

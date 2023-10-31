@@ -7,6 +7,7 @@ Review.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -24,18 +25,18 @@ Review.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+
       references: {
         model: "user",
         key: "id",
       },
-      item_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: "item",
-          key: "id",
-        },
+    },
+    item_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "item",
+        key: "id",
       },
     },
   },
