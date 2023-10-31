@@ -4,5 +4,23 @@
     "filename": "jackolantern.jpg",
     "cssItemId": "fallItem1",
     "review_id": "1"
+  },
+  {
+    "name": "Reeses Candy",
+    "filename": "reeses.jpg",
+    "cssItemId": "fallItem2",
+    "review_id": "2"
+  },
+  {
+    "name": "skeletons.jpg",
+    "filename": "jackolantern.jpg",
+    "cssItemId": "fallItem3",
+    "review_id": "3"
+  },
+  {
+    "name": "Witches Hat",
+    "filename": "witches-hat.jpg",
+    "cssItemId": "fallItem4",
+    "review_id": "4"
   }
 ]
