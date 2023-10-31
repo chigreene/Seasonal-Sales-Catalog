@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Reeses extends Model {}
+class Review extends Model {}
 
-Reeses.init(
+Review.init(
   {
-    item_id: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
@@ -22,13 +22,12 @@ Reeses.init(
       type: DataTypes.DATE,
       defaultValue: sequelize.literal("NOW()"),
     },
-
-    UserReference_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: "user",
-        key: "user_id",
+        key: "id",
       },
     },
   },
@@ -37,8 +36,8 @@ Reeses.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "reeses",
+    modelName: "review",
   }
 );
 
-module.exports = Reeses;
+module.exports = Review;

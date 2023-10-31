@@ -1,35 +1,33 @@
-const FallItem = require('./fallItem');
-const User = require('./user');
-const FallReview = require('./fallReview')
-const Reeses = require('./reeses')
-const Skeleton = require('./skeleton')
+const Item = require("./item");
+const User = require("./user");
+const Review = require("./review");
 
-User.hasMany(FallReview, {
-  foreignKey: "UserReference_id",
+User.hasMany(Review, {
+  foreignKey: "user_id",
   onDelete: "CASCADE",
 });
 
-FallReview.belongsTo(User, {
-  foreignKey: "UserReference_id",
+Review.belongsTo(User, {
+  foreignKey: "user_id",
 });
 
-User.hasMany(Reeses, {
-  foreignKey: "UserReference_id",
+Item.hasMany(Review, {
+  foreignKey: "review_id",
   onDelete: "CASCADE",
 });
 
-Reeses.belongsTo(User, {
-  foreignKey: "UserReference_id",
-});
-
-User.hasMany(Skeleton, {
-  foreignKey: "UserReference_id",
+Review.belongsTo(Item, {
+  foreignKey: "review_id",
   onDelete: "CASCADE",
 });
 
-Skeleton.belongsTo(User, {
-  foreignKey: "UserReference_id",
-});
+// Item.hasMany(Review, {
+//   foreignKey: "review_id",
+//   onDelete: "CASCADE",
+// });
 
+// Item.belongsTo(Review, {
+//   foreignKey: "review_id",
+// });
 
-module.exports = { User, FallItem, FallReview, Reeses, Skeleton };
+module.exports = { User, Item, Review };

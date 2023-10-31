@@ -1,9 +1,9 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection')
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class FallItem extends Model { };
+class Item extends Model {}
 
-FallItem.init(
+Item.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -22,14 +22,18 @@ FallItem.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    review_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "fall_item",
+    modelName: "item",
   }
 );
 
-module.exports = FallItem;
+module.exports = Item;
