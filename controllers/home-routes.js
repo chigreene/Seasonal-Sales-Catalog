@@ -5,15 +5,19 @@ const router = require("express").Router();
 
 router.get("/", async (req, res) => {
   try {
-    const itemData = await Item.findAll();
+    const itemData = await Item.findAll({});
     const items = itemData.map((item) => {
       return item.get({
         plain: true,
       });
     });
 
-    const reviewData = await Review.findAll();
-    const reviews = reviewData.map((item) => {
+    const reviewPumpkin = await Review.findAll({
+      where: {
+        item_id: 1,
+      },
+    });
+    const reviewsPumpkin = reviewPumpkin.map((item) => {
       return item.get({
         plain: true,
       });
@@ -21,7 +25,7 @@ router.get("/", async (req, res) => {
 
     res.render("login", {
       items,
-      reviews,
+      reviewsPumpkin,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {

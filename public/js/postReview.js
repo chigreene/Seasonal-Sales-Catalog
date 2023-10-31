@@ -2,7 +2,7 @@ async function newFormHandler(event) {
   event.preventDefault();
 
   // const username = document.querySelector("#usernameInput").value;
-  const review = document.querySelector("#reviewInput").value;
+  const review = document.querySelector("#pumpkinReviewInput").value;
   // const postId =
   //   window.location.pathname.split("/")[
   //     window.location.pathname.split("/").length - 1
@@ -22,4 +22,6 @@ async function newFormHandler(event) {
   }
 }
 
-document.querySelector("#addReview").addEventListener("submit", newFormHandler);
+document
+  .querySelector("#postReview")
+  .addEventListener("submit", newFormHandler);

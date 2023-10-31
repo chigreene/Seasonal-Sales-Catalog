@@ -18,6 +18,10 @@ Item.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    reviewInputId: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     filename: {
       type: DataTypes.STRING,
       allowNull: false,

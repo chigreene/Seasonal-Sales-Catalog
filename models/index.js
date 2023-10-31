@@ -12,22 +12,22 @@ Review.belongsTo(User, {
 });
 
 Item.hasMany(Review, {
-  foreignKey: "review_id",
+  foreignKey: "item_id",
   onDelete: "CASCADE",
 });
 
 Review.belongsTo(Item, {
-  foreignKey: "review_id",
+  foreignKey: "item_id",
   onDelete: "CASCADE",
 });
 
 Review.hasOne(Item, {
-  foreignKey: "item_id",
+  foreignKey: "review_id",
   onDelete: "CASCADE",
 });
 
 Review.belongsTo(Item, {
-  foreignKey: "item_id",
+  foreignKey: "review_id",
 });
 
 module.exports = { User, Item, Review };
