@@ -40,30 +40,19 @@
             ></button>
           </div>
           <div class="modal-body">
-            <article class="login-form">
-              <form>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Add review
-                    below.</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    {{! dynamic input id }}
-                    id="{{reviewInputId}}"
-                  />
-                </div>
-              </form>
-            </article>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-              {{! id }}
-              id="postReview"
-            >Submit</button>
-
+            <form id="postReviewForm">
+              <div class="mb-3">
+                <label for="reviewInput" class="form-label">Add review below.</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="{{reviewInputId}}"
+                />
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary">Submit</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

@@ -1,14 +1,11 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  // const username = document.querySelector("#usernameInput").value;
   const review = document.querySelector("#pumpkinReviewInput").value;
-  // const postId =
-  //   window.location.pathname.split("/")[
-  //     window.location.pathname.split("/").length - 1
-  //   ];
 
-  const response = await fetch(`/api/postReview/`, {
+  const item_id = "1";
+
+  const response = await fetch(`/api/post/${item_id}`, {
     method: "POST",
     body: JSON.stringify({
       review,
@@ -18,10 +15,11 @@ async function newFormHandler(event) {
     },
   });
   if (!response.ok) {
+    console.log("error in PostReview");
     alert("failed to post comment.");
   }
 }
 
 document
-  .querySelector("#postReview")
+  .querySelector("#postReviewForm")
   .addEventListener("submit", newFormHandler);
