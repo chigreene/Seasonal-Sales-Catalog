@@ -21,13 +21,13 @@ Review.belongsTo(Item, {
   onDelete: "CASCADE",
 });
 
-// Item.hasMany(Review, {
-//   foreignKey: "review_id",
-//   onDelete: "CASCADE",
-// });
+Review.hasOne(Item, {
+  foreignKey: "item_id",
+  onDelete: "CASCADE",
+});
 
-// Item.belongsTo(Review, {
-//   foreignKey: "review_id",
-// });
+Review.belongsTo(Item, {
+  foreignKey: "item_id",
+});
 
 module.exports = { User, Item, Review };

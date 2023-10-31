@@ -29,6 +29,14 @@ Review.init(
         model: "user",
         key: "id",
       },
+      item_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: "item",
+          key: "id",
+        },
+      },
     },
   },
   {
