@@ -5,14 +5,14 @@ const router = require("express").Router();
 
 router.get("/", async (req, res) => {
   try {
-    const itemData = await FallItem.findAll();
+    const itemData = await Item.findAll();
     const items = itemData.map((item) => {
       return item.get({
         plain: true,
       });
     });
 
-    const reviewData = await FallReview.findAll();
+    const reviewData = await Review.findAll();
     const reviews = reviewData.map((item) => {
       return item.get({
         plain: true,
