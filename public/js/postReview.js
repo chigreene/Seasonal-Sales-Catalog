@@ -1,5 +1,6 @@
 async function newFormHandler(event) {
   event.preventDefault();
+  console.log("button works");
 
   const review = document.querySelector("#pumpkinReviewInput").value;
 
@@ -21,5 +22,5 @@ async function newFormHandler(event) {
 }
 
 document
-  .querySelector("#postReviewForm")
+  .querySelector("#pumpkinReviewForm")
   .addEventListener("submit", newFormHandler);

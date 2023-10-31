@@ -23,6 +23,10 @@ Item.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    postReviewForm: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     filename: {
       type: DataTypes.STRING,
       allowNull: false,
