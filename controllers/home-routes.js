@@ -3,7 +3,6 @@ const Review = require("../models/review");
 
 const router = require("express").Router();
 
-
 router.get("/", async (req, res) => {
   try {
     const itemData = await Item.findAll({});
@@ -24,7 +23,7 @@ router.get("/", async (req, res) => {
       });
     });
 
-    res.render("login", {
+    res.render("home", {
       items,
       reviewsPumpkin,
       loggedIn: req.session.loggedIn,
@@ -32,7 +31,6 @@ router.get("/", async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-
 });
 
 module.exports = router;

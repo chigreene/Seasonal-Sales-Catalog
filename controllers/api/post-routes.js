@@ -4,10 +4,10 @@ const { Review } = require("../../models");
 // api/post
 router.post("/:id", async (req, res) => {
   try {
-    const userName = req.session.username;
+    const username = req.session.username;
 
     const reviewData = await Review.create({
-      userName: userName,
+      username: username,
       review: req.body.review,
       item_id: req.params.id,
     });
