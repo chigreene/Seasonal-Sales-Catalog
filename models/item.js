@@ -23,6 +23,10 @@ Item.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    modalId: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     postReviewForm: {
       type: DataTypes.STRING,
       allowNull: false,

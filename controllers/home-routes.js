@@ -3,7 +3,6 @@ const Review = require("../models/review");
 
 const router = require("express").Router();
 
-
 router.get("/", async (req, res) => {
   try {
     const itemData = await Item.findAll({});
@@ -12,7 +11,7 @@ router.get("/", async (req, res) => {
         plain: true,
       });
     });
-
+    // getting pumpkin reviews from database and mapping individual reviews into correct format
     const reviewPumpkin = await Review.findAll({
       where: {
         item_id: 1,
@@ -23,16 +22,52 @@ router.get("/", async (req, res) => {
         plain: true,
       });
     });
+    // getting Reeses reviews and mapping them in to correct format
+    const reviewReeses = await Review.findAll({
+      where: {
+        item_id: 2,
+      },
+    });
+    const reviewsReeses = reviewReeses.map((item) => {
+      return item.get({
+        plain: true,
+      });
+    });
+    // getting skeleton reviews and mapping them into usable format
+    const reviewSkeleton = await Review.findAll({
+      where: {
+        item_id: 3,
+      },
+    });
+    const reviewsSkeleton = reviewSkeleton.map((item) => {
+      return item.get({
+        plain: true,
+      });
+    });
 
-    res.render("login", {
+    // getting witches hat reviews and mapping them into usable format
+    const reviewWitchesHat = await Review.findAll({
+      where: {
+        item_id: 4,
+      },
+    });
+    const reviewsWitchesHat = reviewWitchesHat.map((item) => {
+      return item.get({
+        plain: true,
+      });
+    });
+
+    res.render("home", {
       items,
       reviewsPumpkin,
+      reviewsReeses,
+      reviewsSkeleton,
+      reviewsWitchesHat,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
   }
-
 });
 
 module.exports = router;

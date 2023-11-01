@@ -4,27 +4,31 @@
     "filename": "jackolantern.jpg",
     "cssItemId": "fallItem1",
     "reviewInputId": "pumpkinReviewInput",
-    "postReviewForm": "pumpkinReviewForm"
+    "postReviewForm": "pumpkinReviewForm",
+    "modalId": "pumpkinModal"
   },
   {
     "name": "Reeses Candy",
     "filename": "reeses.jpg",
     "cssItemId": "fallItem2",
     "reviewInputId": "reesesReviewInput",
-    "postReviewForm": "reesesReviewForm"
+    "postReviewForm": "reesesReviewForm",
+    "modalId": "reesesModal"
   },
   {
     "name": "skeletons.jpg",
     "filename": "skeletons.jpg",
     "cssItemId": "fallItem3",
     "reviewInputId": "skeletonReviewInput",
-    "postReviewForm": "skeletonReviewForm"
+    "postReviewForm": "skeletonReviewForm",
+    "modalId": "skeletonModal"
   },
   {
     "name": "Witches Hat",
     "filename": "witches-hat.jpg",
     "cssItemId": "fallItem4",
     "reviewInputId": "Witches-HatReviewInput",
-    "postReviewForm": "Witches-HatReviewForm"
+    "postReviewForm": "Witches-HatReviewForm",
+    "modalId": "witchesHatModal"
   }
 ]

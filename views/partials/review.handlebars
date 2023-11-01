@@ -12,7 +12,7 @@
 
 <div id="review2" class="review-handlebars">
 
-  {{#each reviews}}
+  {{#each reviewsReeses}}
     <div class="inner-review-div">
       <p>{{review}}</p>
       <li>{{username}}</li>
@@ -24,7 +24,19 @@
 
 <div id="review3" class="review-handlebars">
 
-  {{#each skeletonReviews}}
+  {{#each reviewsSkeleton}}
+    <div class="inner-review-div">
+      <p>{{review}}</p>
+      <li>{{username}}</li>
+
+    </div>
+  {{/each}}
+
+</div>
+
+<div id="review4" class="review-handlebars">
+
+  {{#each reviewsWitchesHat}}
     <div class="inner-review-div">
       <p>{{review}}</p>
       <li>{{username}}</li>
