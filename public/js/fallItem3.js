@@ -1,11 +1,12 @@
 document
   .getElementById("fallItem3")
   .addEventListener("click", function (event) {
-      event.preventDefault();
+    event.preventDefault();
     //   removes other item reviews
     document.getElementById("review1").style.display = "none";
-      document.getElementById("review2").style.display = "none";
-    
+    document.getElementById("review2").style.display = "none";
+    document.getElementById("review4").style.display = "none";
+
     // renders clicked items reviews
     document.getElementById("sampleClick").style.display = "block";
     document.getElementById("review3").style.display = "block";

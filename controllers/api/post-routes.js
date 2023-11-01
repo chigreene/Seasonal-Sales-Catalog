@@ -5,8 +5,6 @@ const { Review } = require("../../models");
 router.post("/:id", async (req, res) => {
   try {
     const username = req.session.username;
-    console.log(req.session);
-    console.log(username);
     const reviewData = await Review.create({
       username: username,
       review: req.body.review,

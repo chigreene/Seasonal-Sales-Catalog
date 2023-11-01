@@ -14,26 +14,16 @@
         type="button"
         class="btn btn-primary"
         data-bs-toggle="modal"
-        data-bs-target="#addReview"
+        data-bs-target="#{{modalId}}"
       >
         Add review
       </button>
     </div>
 
-    {{!-- <form id="{{postReviewForm}}">
-      <div class="mb-3">
-        <label for="reviewInput" class="form-label">Add review below.</label>
-        <input type="text" class="form-control" id="{{reviewInputId}}" />
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-secondary">Submit</button>
-      </div>
-    </form> --}}
-
     {{! Modal }}
     <div
       class="modal fade"
-      id="addReview"
+      id="{{modalId}}"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
