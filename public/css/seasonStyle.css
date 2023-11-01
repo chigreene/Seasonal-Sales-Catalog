@@ -1,78 +1,104 @@
-.banner{
-    margin:5% auto;
-    display:flex;
-    justify-content:space-evenly;
+.banner {
+  margin: 5% auto;
+  display: flex;
+  justify-content: space-evenly;
 }
-.banner button{
-    height:fit-content;
+.banner button {
+  height: fit-content;
 }
 
 .season-nav ul {
-    display:flex;
-    justify-content: space-evenly;
-    list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
 }
 /* for visuals only can be removed later */
-.product{
-    
-    width:800px;
-    height:400px;
-    display: block;
-    
+.product {
+  width: 800px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .item {
-    background-color: green;
-    overflow-y: auto;
-    width: 400px;
-    
+  background-color: lightslategray;
+  overflow-y: auto;
+  width: 400px;
+  transition: 0.5s ease;
 }
+.inner-item-div {
+  margin: 10px auto;
+  width: 300px;
+  height: 350px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-item-div img {
+  width: 100%;
+  height: auto;
+  /* object-fit: cover;  */
+}
+
 .item-full-width {
-    
-    width: 800px;
+  width: 800px;
+}
+
+.custom-hover {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+.custom-hover:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
 .review {
-    background-color: red;
-    overflow-y: auto;
-    width: 400px;
-    display: none;
-    
-}
-#sample-item{
-    background-color: gray; 
-    margin: 10px auto;
-    width: 200px; 
-    height: 200px; 
-    justify-content: center;
-    align-items: center;
+  background-color: darkorange;
+  overflow-y: auto;
+  width: 400px;
+  display: none;
+  transition: 0.5s ease;
 }
 
-#sample-review{
-    background-color: gray; 
-    margin: 10px auto;
-    width: 200px; 
-    height: 200px; 
-    justify-content: center;
-    align-items: center; 
+.review:hover {
+  cursor: pointer;
 }
-.season-container{
-    padding:4%;
+.reviewClose {
+  text-align: center;
+  padding: 5px;
+  background-color: black;
+  color: darkorange;
 }
-.product{
-    display:flex;
-    justify-content: space-evenly;
+#review1 {
+  display: none;
+}
+#review2 {
+  display: none;
 }
 
+.inner-review-div {
+  width: 80%;
+  margin: 20px auto;
+}
 
+.season-container {
+  padding: 4%;
+}
 
+.modal-backdrop.show {
+  display: none;
+}
 
 /* For Flickity */
 /* values that can be played aroundn with later */
 .carousel-cell {
-    width: 80%;
-    height: 600px;
-    margin-right: 10px;
-    background-color:white;
-    overflow-y: auto;
+  width: 80%;
+  height: 600px;
+  margin-right: 10px;
+  background-color: white;
+  overflow-y: auto;
 }
-

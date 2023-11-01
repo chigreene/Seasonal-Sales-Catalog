@@ -1,6 +1,35 @@
-<div class="review-handlebars">
-  <div id="sample-review"></div>
-  <div id="sample-review"></div>
-  <div id="sample-review"></div>
-  <div id="sample-review"></div>
+<div id="review1" class="review-handlebars">
+
+  {{#each reviewsPumpkin}}
+    <div class="inner-review-div">
+      <p>{{review}}</p>
+      <li>{{username}}</li>
+
+    </div>
+  {{/each}}
+
+</div>
+
+<div id="review2" class="review-handlebars">
+
+  {{#each reviews}}
+    <div class="inner-review-div">
+      <p>{{review}}</p>
+      <li>{{username}}</li>
+
+    </div>
+  {{/each}}
+
+</div>
+
+<div id="review3" class="review-handlebars">
+
+  {{#each skeletonReviews}}
+    <div class="inner-review-div">
+      <p>{{review}}</p>
+      <li>{{username}}</li>
+
+    </div>
+  {{/each}}
+
 </div>

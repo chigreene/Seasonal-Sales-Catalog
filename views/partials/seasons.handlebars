@@ -41,20 +41,22 @@
     <div class="carousel-cell">
           <h3>Product name</h3>
           <div class="product">
-                        <div class="item item-full-width">
+                        <div id="itemClick" class = "item item-full-width">
                             {{> item}}
-                        </div>
-                        <div class="review" id="reviewDiv">
-                            {{> review}}
-                        </div>
                         
+                        </div>
+                        <div id="sampleClick" class="review" >
+                            <p class="reviewClose">Close Reviews</p>
+                            {{> review}}
+                        </div>                    
           </div>
-        </div>
+    </div>
     
-    {{!-- closing --}}
 </div>
 
-</section>
-</div>
-
+<script src="/js/postReview.js"></script>
 <script src="/js/viewReviews.js"></script>
+<script src="/js/fallItem1.js"></script>
+<script src="/js/fallItem2.js"></script>
+<script src="/js/fallItem3.js"></script>
+{{!-- <script src="/js/fallItem4.js"></script> --}}
