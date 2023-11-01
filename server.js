@@ -1,12 +1,12 @@
 // test comment
-require('dotenv').config();
+require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const exphbs = require("express-handlebars");
-const session = require('express-session');
-const routes = require('./controllers');
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const session = require("express-session");
+const routes = require("./controllers");
+const sequelize = require("./config/connection");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -17,7 +17,7 @@ const sess = {
     maxAge: 60 * 60 * 1000,
     httpOnly: true,
     secure: false,
-    sameSite: 'strict',
+    sameSite: "strict",
   },
   resave: false,
   saveUninitialized: true,
@@ -39,6 +39,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log("Now listening"));
 });
 
+// test comment
