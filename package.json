@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon server.js",
-    "seed": "node seeds/index.js"
+    "start": "node server.js",
+    "seed": "node seeds/index.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
