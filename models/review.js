@@ -13,7 +13,7 @@ Review.init(
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     review: {
       type: DataTypes.STRING,
