@@ -17,6 +17,8 @@ async function newFormHandler(event) {
   if (!response.ok) {
     console.log("error in PostReview");
     alert("failed to post comment.");
+  } else {
+    document.location.replace("/");
   }
 }
 
