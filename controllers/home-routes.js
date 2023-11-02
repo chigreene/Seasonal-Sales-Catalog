@@ -38,7 +38,7 @@ router.get('/login/recover', (req, res) => {
 });
 
 //Should this be a seperate router?
-router.get('/season', checkLoginStatus, async (req, res) => {
+router.get('/seasons', checkLoginStatus, async (req, res) => {
   try {
     const itemData = await Item.findAll({});
     const items = itemData.map((item) => {
