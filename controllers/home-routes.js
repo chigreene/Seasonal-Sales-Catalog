@@ -16,7 +16,7 @@ const checkLoginStatus = (req, res, next) => {
 
 //Should this be a seperate router?
 router.get('/login', (req, res) => {
-  try{
+  try {
     res.render('login', {
       loggedIn: req.session.loggedIn,
     });
@@ -24,17 +24,17 @@ router.get('/login', (req, res) => {
     res.status(500).json('unable to fufill request')
   }
 
-  
+
 });
 
 router.get('/login/recover', (req, res) => {
-  try{
+  try {
     res.status(200).render('loginRecover')
   }
-  catch(err){
+  catch (err) {
     res.status(500).json('unable to fufill request')
   }
- 
+
 });
 
 //Should this be a seperate router?

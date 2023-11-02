@@ -1,5 +1,6 @@
 // Select all the needed DOM elements
 
+
 // form fields
 const both_Em_Us = document.querySelector("#both_Em_Us");
 const userNameInput = document.querySelector("#userName");
@@ -40,7 +41,7 @@ const create = async (event) => {
 
 const login = async (event) => {
     event.preventDefault();
-
+    console.log('clicked')
     const both = both_Em_Us.value.trim();
     const password = loginPasswordInput.value.trim();
 
@@ -73,9 +74,14 @@ const logout = async (event) => {
     }
 }
 
-logoutButton.addEventListener('click', logout)
-createButton.addEventListener('click', create)
-loginButton.addEventListener('click', login)
-// if(logoutButton || createButton || loginButton){
 
-// }
+
+if (loginButton){
+    loginButton.addEventListener('click', login)
+} 
+if (logoutButton) {
+    logoutButton.addEventListener('click', logout)
+}
+if (createButton){
+    createButton.addEventListener('click', create)
+}
