@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-
+const { Op } = require('sequelize');
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
@@ -25,8 +25,11 @@ router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-        email: req.body.email,
-      },
+        [Op.or]: [
+          { email: req.body.both },
+          { user_name: req.body.both }
+        ]
+      }
     });
 
     if (!dbUserData) {
