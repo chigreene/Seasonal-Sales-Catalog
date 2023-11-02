@@ -4,7 +4,8 @@
 const both_Em_Us = document.querySelector("#both_Em_Us");
 const userNameInput = document.querySelector("#userName");
 const emailInput = document.querySelector("#email");
-const passwordInput = document.querySelector("#password");
+const loginPasswordInput = document.querySelector("#password");
+const newPasswordInput = document.querySelector("#newPassword");
 
 // buttons
 const createButton = document.querySelector("#create");
@@ -18,7 +19,7 @@ const create = async (event) => {
 
     const username = userNameInput.value.trim();
     const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+    const password = newPasswordInput.value.trim();
 
     if (username && email && password) {
         const response = await fetch('/api/users', {
@@ -41,7 +42,7 @@ const login = async (event) => {
     event.preventDefault();
 
     const both = both_Em_Us.value.trim();
-    const password = passwordInput.value.trim();
+    const password = loginPasswordInput.value.trim();
 
     if (both && password) {
         const response = await fetch('/api/users/login', {
