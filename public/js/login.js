@@ -73,6 +73,9 @@ const logout = async (event) => {
     }
 }
 
+logoutButton.addEventListener('click', logout)
 createButton.addEventListener('click', create)
 loginButton.addEventListener('click', login)
-logoutButton.addEventListener('click', logout)
+// if(logoutButton || createButton || loginButton){
+
+// }

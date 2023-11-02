@@ -3,17 +3,42 @@ const Review = require("../models/review");
 
 const router = require("express").Router();
 
-router.get('/login', (req, res) => {
-  res.render('login', {
-    loggedIn: req.session.loggedIn,
-  });
-  if (req.session.loggedIn) {
-    res.redirect('/season')
+// set up middleware
+const checkLoginStatus = (req, res, next) => {
+  if (!req.session.loggedIn) {
+    return res.redirect('/login');
   }
+  next();
+};
+
+
+
+
+//Should this be a seperate router?
+router.get('/login', (req, res) => {
+  try{
+    res.render('login', {
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json('unable to fufill request')
+  }
+
+  
 });
 
+router.get('/login/recover', (req, res) => {
+  try{
+    res.status(200).render('loginRecover')
+  }
+  catch(err){
+    res.status(500).json('unable to fufill request')
+  }
+ 
+});
 
-router.get('/season', async (req, res) => {
+//Should this be a seperate router?
+router.get('/season', checkLoginStatus, async (req, res) => {
   try {
     const itemData = await Item.findAll({});
     const items = itemData.map((item) => {
@@ -78,13 +103,17 @@ router.get('/season', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-  if (!req.session.loggedIn) {
-    res.redirect('/login')
+
+});
+
+
+router.get('*', checkLoginStatus, (req, res) => {
+  try {
+    res.redirect('/seasons');
+  } catch (err) {
+    res.status(404).json('Page not found');
   }
 });
 
-router.get('*', (req, res) => {
-  res.redirect('/login');
-});
 
 module.exports = router; 
