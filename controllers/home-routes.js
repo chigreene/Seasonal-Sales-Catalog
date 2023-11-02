@@ -3,7 +3,17 @@ const Review = require("../models/review");
 
 const router = require("express").Router();
 
-router.get("/", async (req, res) => {
+router.get('/login', (req, res) => {
+  res.render('login', {
+    loggedIn: req.session.loggedIn,
+  });
+  if (req.session.loggedIn) {
+    res.redirect('/season')
+  }
+});
+
+
+router.get('/season', async (req, res) => {
   try {
     const itemData = await Item.findAll({});
     const items = itemData.map((item) => {
@@ -57,7 +67,7 @@ router.get("/", async (req, res) => {
       });
     });
 
-    res.render("home", {
+    res.render("seasons", {
       items,
       reviewsPumpkin,
       reviewsReeses,
@@ -68,6 +78,13 @@ router.get("/", async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+  if (!req.session.loggedIn) {
+    res.redirect('/login')
+  }
 });
 
-module.exports = router;
+router.get('*', (req, res) => {
+  res.redirect('/login');
+});
+
+module.exports = router; 
