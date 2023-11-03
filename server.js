@@ -27,8 +27,8 @@ const sess = {
     db: sequelize,
   }),
 };
-// app.use(morgan('tiny'))
-// app.use(cors())
+app.use(morgan('tiny'))
+app.use(cors())
 app.use(session(sess));
 const hbs = exphbs.create({});
 
