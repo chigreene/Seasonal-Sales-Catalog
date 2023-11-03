@@ -93,6 +93,12 @@
   display: none;
 }
 
+/* gptInput field */
+
+.costume-rec-div {
+  margin: 50px auto;
+}
+
 /* For Flickity */
 /* values that can be played aroundn with later */
 .carousel-cell {

@@ -3,9 +3,10 @@
 async function pumpkinReviewHandler(event) {
   event.preventDefault();
 
-  const review = document.querySelector("#pumpkinReviewInput").value;
+  const review = document.querySelector("#formInput-1").value;
 
   const item_id = "1";
+  // const item_id = document.querySelector("#id");
 
   const response = await fetch(`/api/post/${item_id}`, {
     method: "POST",
@@ -25,7 +26,7 @@ async function pumpkinReviewHandler(event) {
 }
 
 document
-  .querySelector("#pumpkinReviewForm")
+  .querySelector("#formInput-1")
   .addEventListener("submit", pumpkinReviewHandler);
 
 // Reeeses: handles taking the input from the modal and passing it to the server
