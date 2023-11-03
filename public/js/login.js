@@ -112,21 +112,23 @@ const recover = async (event) => {
     }
 };
 
-const recoverPwd= async (event) => {
+
+const recoverPwd = async (event) => {
     event.preventDefault();
     const both = recover_Em_Us.value.trim();
     const password = updatePassword.value.trim()
     if (both && password) {
-        const response = await fetch('/api/users/login', {
+        const response = await fetch('/api/users/recover/password', {
             method: 'POST',
             body: JSON.stringify({ both, password }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            console.log('password Changed')
         } else {
-            alert('Failed to log in.');
+            updatePassword.value = ''
+            console.log('cannot use the same password at before retry')
         }
     }
 };

@@ -13,6 +13,6 @@ display:flex;
 justify-content: center;
 }
 
-#passwordRecovDiv,#update{
+#passwordRecovDiv,#update,#reLogin{
     display:none;
 }
