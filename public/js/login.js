@@ -126,6 +126,7 @@ const recoverPwd = async (event) => {
 
         if (response.ok) {
             console.log('password Changed')
+            document.location.replace('/');
         } else {
             updatePassword.value = ''
             console.log('cannot use the same password at before retry')
