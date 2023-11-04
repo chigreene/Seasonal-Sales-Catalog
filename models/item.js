@@ -15,10 +15,6 @@ Item.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    season: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     filename: {
       type: DataTypes.STRING,
       allowNull: false,

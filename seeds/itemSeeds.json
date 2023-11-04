@@ -1,32 +1,22 @@
 [
   {
     "name": "Jack-O-Lantern",
-    "filename": "jackolantern.jpg",
-    "season": "fall"
+    "filename": "jackolantern.jpg"
   },
   {
     "name": "Reeses Candy",
-    "filename": "reeses.jpg",
-    "season": "fall"
+    "filename": "reeses.jpg"
   },
   {
     "name": "skeletons.jpg",
-    "filename": "skeletons.jpg",
-    "season": "fall"
+    "filename": "skeletons.jpg"
   },
   {
     "name": "Witches Hat",
-    "filename": "witches-hat.jpg",
-    "season": "fall"
+    "filename": "witches-hat.jpg"
   },
   {
     "name": "Dreidal",
-    "filename": "dreidal.jpg",
-    "season": "winter"
-  },
-  {
-    "name": "Christmas Tree",
-    "filename": "christmas-tree.jpg",
-    "season": "winter"
+    "filename": "dreidal.jpg"
   }
 ]
