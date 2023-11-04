@@ -3,59 +3,29 @@ const Review = require("../models/review");
 
 const router = require("express").Router();
 
+// Function to get reviews by item_id
+async function getReviewsByItemId(itemId) {
+  const reviewData = await Review.findAll({
+    where: {
+      item_id: itemId,
+    },
+  });
+  return reviewData.map((review) => review.get({ plain: true }));
+}
+
 router.get("/", async (req, res) => {
   try {
     const itemData = await Item.findAll({});
-    const items = itemData.map((item) => {
-      return item.get({
-        plain: true,
-      });
-    });
-    // getting pumpkin reviews from database and mapping individual reviews into correct format
-    const reviewPumpkin = await Review.findAll({
-      where: {
-        item_id: 1,
-      },
-    });
-    const reviewsPumpkin = reviewPumpkin.map((item) => {
-      return item.get({
-        plain: true,
-      });
-    });
-    // getting Reeses reviews and mapping them in to correct format
-    const reviewReeses = await Review.findAll({
-      where: {
-        item_id: 2,
-      },
-    });
-    const reviewsReeses = reviewReeses.map((item) => {
-      return item.get({
-        plain: true,
-      });
-    });
-    // getting skeleton reviews and mapping them into usable format
-    const reviewSkeleton = await Review.findAll({
-      where: {
-        item_id: 3,
-      },
-    });
-    const reviewsSkeleton = reviewSkeleton.map((item) => {
-      return item.get({
-        plain: true,
-      });
-    });
+    const items = itemData.map((item) => item.get({ plain: true }));
 
-    // getting witches hat reviews and mapping them into usable format
-    const reviewWitchesHat = await Review.findAll({
-      where: {
-        item_id: 4,
-      },
-    });
-    const reviewsWitchesHat = reviewWitchesHat.map((item) => {
-      return item.get({
-        plain: true,
-      });
-    });
+    // Use Promise.all to fetch all reviews in parallel
+    const [reviewsPumpkin, reviewsReeses, reviewsSkeleton, reviewsWitchesHat] =
+      await Promise.all([
+        getReviewsByItemId(1),
+        getReviewsByItemId(2),
+        getReviewsByItemId(3),
+        getReviewsByItemId(4),
+      ]);
 
     res.render("home", {
       items,
