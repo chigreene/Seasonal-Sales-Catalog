@@ -15,19 +15,7 @@ Item.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    cssItemId: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    reviewInputId: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    modalId: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    postReviewForm: {
+    season: {
       type: DataTypes.STRING,
       allowNull: false,
     },

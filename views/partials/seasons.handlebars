@@ -45,10 +45,10 @@
 <div class="carousel" data-flickity='{ "autoPlay": true }'>
     {{!-- add for each statement later for adding all products and reviews --}}
     <div class="carousel-cell">
-          <h3>Product name</h3>
+          <h3>Fall Items</h3>
           <div class="product">
                         <div id="itemDiv" class = "item item-full-width">
-                            {{> item}}
+                            {{> fallItem}}
                         
                         </div>
                         <div id="reviewDiv" class="review" >
@@ -75,10 +75,10 @@
     </div>
 
     <div class="carousel-cell">
-          <h3>Product name</h3>
+          <h3>Winter Items</h3>
           <div class="product">
                         <div id="itemClick" class = "item item-full-width">
-                            {{> item}}
+                            {{> winterItem}}
                         
                         </div>
                         <div id="sampleClick" class="review" >
@@ -86,6 +86,54 @@
 
                                 <div id="review5" class="review-handlebars">
                                 {{> reviewTemplate reviews=reviewsDreidal }}
+                                </div>
+
+                                <div id="review5" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsChristmasTree }}
+                                </div>
+
+                        </div>                    
+          </div>
+    </div>
+
+    <div class="carousel-cell">
+          <h3>Spring Items</h3>
+          <div class="product">
+                        <div id="itemClick" class = "item item-full-width">
+                            {{> springItem}}
+                        
+                        </div>
+                        <div id="sampleClick" class="review" >
+                            <p class="reviewClose">Close Reviews</p>
+
+                                <div id="review5" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsDreidal }}
+                                </div>
+
+                                <div id="review5" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsChristmasTree }}
+                                </div>
+
+                        </div>                    
+          </div>
+    </div>
+
+    <div class="carousel-cell">
+          <h3>Summer Items</h3>
+          <div class="product">
+                        <div id="itemClick" class = "item item-full-width">
+                            {{> summerItem}}
+                        
+                        </div>
+                        <div id="sampleClick" class="review" >
+                            <p class="reviewClose">Close Reviews</p>
+
+                                <div id="review5" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsDreidal }}
+                                </div>
+
+                                <div id="review5" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsChristmasTree }}
                                 </div>
 
                         </div>                    
