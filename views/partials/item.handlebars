@@ -44,14 +44,20 @@
           </div>
           <div class="modal-body">
             {{!-- refractor to reviewForm-{{id}} --}}
-            <form id="formId-{{id}}">
+            <form
+              id="formId-{{id}}"
+              class="review-form"
+              data-item-id="{{id}}"
+              data-review-input-id="reviewInput-{{id}}"
+            >
               <div class="mb-3">
-                <label for="reviewInput" class="form-label">Add review below.</label>
+                <label for="reviewInput-{{id}}" class="form-label">Add review
+                  below.</label>
                 <input
                   type="text"
                   class="form-control"
                   {{!-- refractor to reviewInput-{{id}} --}}
-                  id="formInput-{{id}}"
+                  id="reviewInput-{{id}}"
                 />
               </div>
               <div class="modal-footer">
