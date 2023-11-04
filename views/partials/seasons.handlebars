@@ -53,7 +53,23 @@
                         </div>
                         <div id="sampleClick" class="review" >
                             <p class="reviewClose">Close Reviews</p>
-                            {{> review}}
+
+                                <div id="review1" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsPumpkin }}
+                                </div>
+
+                                <div id="review2" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsReeses }}
+                                </div>
+
+                                <div id="review3" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsSkeleton }}
+                                </div>
+
+                                <div id="review4" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsWitchesHat }}
+                                </div>
+
                         </div>                    
           </div>
     </div>
