@@ -19,13 +19,19 @@ router.get("/", async (req, res) => {
     const items = itemData.map((item) => item.get({ plain: true }));
 
     // Use Promise.all to fetch all reviews in parallel
-    const [reviewsPumpkin, reviewsReeses, reviewsSkeleton, reviewsWitchesHat] =
-      await Promise.all([
-        getReviewsByItemId(1),
-        getReviewsByItemId(2),
-        getReviewsByItemId(3),
-        getReviewsByItemId(4),
-      ]);
+    const [
+      reviewsPumpkin,
+      reviewsReeses,
+      reviewsSkeleton,
+      reviewsWitchesHat,
+      reviewsDreidal,
+    ] = await Promise.all([
+      getReviewsByItemId(1),
+      getReviewsByItemId(2),
+      getReviewsByItemId(3),
+      getReviewsByItemId(4),
+      getReviewsByItemId(5),
+    ]);
 
     res.render("home", {
       items,
@@ -33,6 +39,7 @@ router.get("/", async (req, res) => {
       reviewsReeses,
       reviewsSkeleton,
       reviewsWitchesHat,
+      reviewsDreidal,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
