@@ -26,7 +26,7 @@ async function pumpkinReviewHandler(event) {
 }
 
 document
-  .querySelector("#formInput-1")
+  .querySelector("#formId-1")
   .addEventListener("submit", pumpkinReviewHandler);
 
 // Reeeses: handles taking the input from the modal and passing it to the server
