@@ -2,33 +2,41 @@
   {
     "name": "Jack-O-Lantern",
     "filename": "jackolantern.jpg",
-    "cssItemId": "fallItem1",
-    "reviewInputId": "pumpkinReviewInput",
-    "postReviewForm": "pumpkinReviewForm",
-    "modalId": "pumpkinModal"
+    "season": "fall"
   },
   {
     "name": "Reeses Candy",
     "filename": "reeses.jpg",
-    "cssItemId": "fallItem2",
-    "reviewInputId": "reesesReviewInput",
-    "postReviewForm": "reesesReviewForm",
-    "modalId": "reesesModal"
+    "season": "fall"
   },
   {
     "name": "skeletons.jpg",
     "filename": "skeletons.jpg",
-    "cssItemId": "fallItem3",
-    "reviewInputId": "skeletonReviewInput",
-    "postReviewForm": "skeletonReviewForm",
-    "modalId": "skeletonModal"
+    "season": "fall"
   },
   {
     "name": "Witches Hat",
     "filename": "witches-hat.jpg",
-    "cssItemId": "fallItem4",
-    "reviewInputId": "Witches-HatReviewInput",
-    "postReviewForm": "Witches-HatReviewForm",
-    "modalId": "witchesHatModal"
+    "season": "fall"
+  },
+  {
+    "name": "Dreidal",
+    "filename": "dreidal.jpg",
+    "season": "winter"
+  },
+  {
+    "name": "Christmas Tree",
+    "filename": "christmas-tree.jpg",
+    "season": "winter"
+  },
+  {
+    "name": "Darth Vadar Figurine",
+    "filename": "may4th.jpg",
+    "season": "spring"
+  },
+  {
+    "name": "Fourth of July Hat",
+    "filename": "july4th.jpg",
+    "season": "summer"
   }
 ]
