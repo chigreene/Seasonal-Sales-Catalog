@@ -1,3 +1,4 @@
+const User = require("../models/user");
 const Item = require("../models/item");
 const Review = require("../models/review");
 
@@ -17,6 +18,15 @@ router.get("/", async (req, res) => {
   try {
     const itemData = await Item.findAll({});
     const items = itemData.map((item) => item.get({ plain: true }));
+
+    console.log(req.session.userId);
+    const userIdData = await User.findOne({
+      where: {
+        id: req.session.userId,
+      },
+    });
+
+    const userId = userIdData.get({ plain: true });
 
     // Use Promise.all to fetch all reviews in parallel
     const [
@@ -41,6 +51,7 @@ router.get("/", async (req, res) => {
 
     res.render("home", {
       items,
+      userId,
       reviewsPumpkin,
       reviewsReeses,
       reviewsSkeleton,
