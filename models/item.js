@@ -19,6 +19,10 @@ Item.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    season: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,

@@ -48,7 +48,7 @@
           <h3>Product name</h3>
           <div class="product">
                         <div id="itemDiv" class = "item item-full-width">
-                            {{> item}}
+                            {{> fallItem}}
                         
                         </div>
                         <div id="reviewDiv" class="review" >
@@ -77,32 +77,22 @@
     <div class="carousel-cell">
           <h3>Product name</h3>
           <div class="product">
-                        <div id="itemClick" class = "item item-full-width">
+                        <div id="winterItemDiv" class = "item item-full-width">
                             {{> winterItem}}
-=======
-                        <div id="itemClick" class = "item item-full-width">
-                            {{> item}}
->>>>>>> parent of 2a90437 (winter carousel is present and items populate.)
                         
                         </div>
-                        <div id="sampleClick" class="review" >
-                        <div id="sampleClick" class="review" >
+                        <div id="winterReviewDiv" class="review" >
                             <p class="reviewClose">Close Reviews</p>
 
                                 <div id="review5" class="review-handlebars">
                                 {{> reviewTemplate reviews=reviewsDreidal }}
                                 </div>
 
-                                <div id="review5" class="review-handlebars">
-                                <div id="review5" class="review-handlebars">
-                                {{> reviewTemplate reviews=reviewsChristmasTree }}
-                                </div>
-
                         </div>                    
           </div>
     </div>
 
-    <div class="carousel-cell">
+    {{!-- <div class="carousel-cell">
           <h3>Spring Items</h3>
           <div class="product">
                         <div id="itemClick" class = "item item-full-width">
@@ -111,16 +101,6 @@
                         </div>
                         <div id="sampleClick" class="review" >
                             <p class="reviewClose">Close Reviews</p>
-
-                                <div id="review5" class="review-handlebars">
-                                <div id="review5" class="review-handlebars">
-                                {{> reviewTemplate reviews=reviewsDreidal }}
-                                </div>
-
-                                <div id="review5" class="review-handlebars">
-                                <div id="review5" class="review-handlebars">
-                                {{> reviewTemplate reviews=reviewsChristmasTree }}
-                                </div>
 
                         </div>                    
           </div>
@@ -146,12 +126,9 @@
                                 <div id="review5" class="review-handlebars">
                                 {{> reviewTemplate reviews=reviewsChristmasTree }}
                                 </div>
-
-=======
->>>>>>> parent of 2a90437 (winter carousel is present and items populate.)
                         </div>                    
           </div>
-    </div>
+    </div> --}}
 
     
     
@@ -172,4 +149,4 @@
 
 <script src="/js/postReview.js"></script>
 <script src="/js/viewReviews.js"></script>
-<script src="/js/viewReviews.js"></script>
+
