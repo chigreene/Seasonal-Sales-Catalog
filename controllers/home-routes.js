@@ -19,14 +19,24 @@ router.get("/", async (req, res) => {
     const itemData = await Item.findAll({});
     const items = itemData.map((item) => item.get({ plain: true }));
 
-    console.log(req.session.userId);
-    const userIdData = await User.findOne({
-      where: {
-        id: req.session.userId,
-      },
-    });
+    // const userReviewData = Review.findAll({
+    //   where: {
+    //     user_id: req.session.userId,
+    //   },
+    // });
+    // console.log(userReviewData);
+    // const userReviews = userReviewData.map((review) =>
+    //   review.get({ plain: true })
+    // );
 
-    const userId = userIdData.get({ plain: true });
+    // const userIdData = await User.findOne({
+    //   where: {
+    //     id: req.session.userId,
+    //   },
+    // });
+
+    // const userId = userIdData.map((user) => user.get({ plain: true }));
+    // console.log(userId);
 
     // Use Promise.all to fetch all reviews in parallel
     const [
@@ -51,7 +61,7 @@ router.get("/", async (req, res) => {
 
     res.render("home", {
       items,
-      userId,
+      // userId,
       reviewsPumpkin,
       reviewsReeses,
       reviewsSkeleton,
