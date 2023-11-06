@@ -1,17 +1,17 @@
 <section class="banner">
-    <h1>SEASON</h1>
+    <h1 id="seasonSwitch">SEASON</h1>
     {{#if loggedIn}}
 <button type="button" class="btn btn-primary" id="logout">
     LOGOUT
 </button>
     {{else}}
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#john">
     LOGIN
 </button>
 {{/if}}
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- login Modal -->
+<div class="modal fade" id="john" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -22,31 +22,63 @@
                 <article class="login-form">
                     <form>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">User Name</label>
-                            <input type="email" class="form-control" id="userName" aria-describedby="emailHelp">
+                            <label for="exampleInputPassword1" class="form-label">Username or Email</label>
+                            <input type="email" class="form-control" id="both_Em_Us">
+                            <div class="form-text">
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email"
-                                aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        </div>
+
+                        
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password">
-                            <div id="emailHelp" class="form-text">Not even that database knows your password</div>
+                            <div id="emailHelp" class="form-text">
+                                                <a href="/login/recover">
+                                                   <i>Forgot Password</i> 
+                                                </a>
+                            </div>
                         </div>
 
                     </form>
                 </article>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="create"  >CREATE ACCOUNT</button>
-                <button type="button" class="btn btn-primary" id="login" data-bs-dismiss="modal">LOGIN</button>
-
+                 <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> Create </button>
+                <button type="button" class="btn btn-success" id="login" data-bs-dismiss="modal">LOGIN</button>
             </div>
         </div>
     </div>
 </div>
 
 </section>
+
+<!-- create Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">User Name</label>
+    <input type="email" class="form-control" id="userName" aria-describedby="emailHelp">
+</div>
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+</div>
+<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="newPassword">
+    <div id="emailHelp" class="form-text">Not even that databse knows your password</div>
+</div>
+            </div>
+            <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="create">CREATE ACCOUNT</button>
+            </div>
+        </div>
+    </div>
+</div>

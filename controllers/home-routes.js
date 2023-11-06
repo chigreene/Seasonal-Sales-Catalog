@@ -13,7 +13,52 @@ async function getReviewsByItemId(itemId) {
   return reviewData.map((review) => review.get({ plain: true }));
 }
 
-router.get("/", async (req, res) => {
+// Function to get reviews by item_id
+async function getReviewsByItemId(itemId) {
+  const reviewData = await Review.findAll({
+    where: {
+      item_id: itemId,
+    },
+  });
+  return reviewData.map((review) => review.get({ plain: true }));
+}
+
+// set up middleware
+const checkLoginStatus = (req, res, next) => {
+  if (!req.session.loggedIn) {
+    return res.redirect('/login');
+  }
+  next();
+};
+
+
+
+
+//Should this be a seperate router?
+router.get('/login', (req, res) => {
+  try {
+    res.render('login', {
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json('unable to fufill request')
+  }
+
+
+});
+
+router.get('/login/recover', (req, res) => {
+  try {
+    res.status(200).render('loginRecover')
+  }
+  catch (err) {
+    res.status(500).json('unable to fufill request')
+  }
+
+});
+
+//Should this be a seperate router?
+router.get('/seasons', checkLoginStatus, async (req, res) => {
   try {
     const itemData = await Item.findAll({});
     const items = itemData.map((item) => item.get({ plain: true }));
@@ -39,7 +84,7 @@ router.get("/", async (req, res) => {
       getReviewsByItemId(8),
     ]);
 
-    res.render("home", {
+    res.render("seasons", {
       items,
       reviewsPumpkin,
       reviewsReeses,
@@ -54,6 +99,17 @@ router.get("/", async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+
 });
 
-module.exports = router;
+
+router.get('*', checkLoginStatus, (req, res) => {
+  try {
+    res.redirect('/seasons');
+  } catch (err) {
+    res.status(404).json('Page not found');
+  }
+});
+
+
+module.exports = router; 
