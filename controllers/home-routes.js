@@ -19,6 +19,16 @@ router.get("/", async (req, res) => {
     const itemData = await Item.findAll({});
     const items = itemData.map((item) => item.get({ plain: true }));
 
+    const userIdData = await User.findOne({
+      where: {
+        id: req.session.userId,
+      },
+    });
+
+    const user = userIdData.get({ plain: true });
+
+    console.log("user", user);
+
     // const userReviewData = Review.findAll({
     //   where: {
     //     user_id: req.session.userId,
@@ -61,7 +71,7 @@ router.get("/", async (req, res) => {
 
     res.render("home", {
       items,
-      // userId,
+      user,
       reviewsPumpkin,
       reviewsReeses,
       reviewsSkeleton,
