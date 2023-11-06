@@ -23,5 +23,20 @@
     "name": "Dreidal",
     "filename": "dreidal.jpg",
     "season": "winter"
+  },
+  {
+    "name": "Christmas Tree",
+    "filename": "christmas-tree.jpg",
+    "season": "winter"
+  },
+  {
+    "name": "Darth Vadar Figurine",
+    "filename": "may4th.jpg",
+    "season": "spring"
+  },
+  {
+    "name": "Fourth of July Hat",
+    "filename": "july4th.jpg",
+    "season": "summer"
   }
 ]
