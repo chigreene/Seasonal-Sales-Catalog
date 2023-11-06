@@ -9,9 +9,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 const delButtonHandler = async (event) => {
   const id = event.target.getAttribute("data-id");
+  console.log(id);
 
   if (id) {
-    const response = await fetch(`/api/user/delete/${id}`, {
+    const response = await fetch(`/user/delete/${id}`, {
       method: "DELETE",
     });
 

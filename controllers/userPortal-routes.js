@@ -43,6 +43,8 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// router.update("/update/:id");
+
 router.delete("/delete/:id", async (req, res) => {
   try {
     const reviewData = await Review.destroy({

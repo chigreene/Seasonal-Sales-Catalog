@@ -17,31 +17,31 @@ function submitUpdate(id) {
 
   // fetch call
 
-  fetch("/update/:id", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      id: id,
-      itemName: updatedName,
-      review: updatedReview,
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      // Handle success (possibly refresh the review display or close the form)
-      console.log("Success:", data);
-      hideUpdateForm(id); // Hide the update form after submission
-    })
-    .catch((error) => {
-      // Handle error
-      console.error("Error:", error);
-    });
+  //   fetch("/update/:id", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       id: id,
+  //       itemName: updatedName,
+  //       review: updatedReview,
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       // Handle success (possibly refresh the review display or close the form)
+  //       console.log("Success:", data);
+  //       hideUpdateForm(id); // Hide the update form after submission
+  //     })
+  //     .catch((error) => {
+  //       // Handle error
+  //       console.error("Error:", error);
+  //     });
 
-  console.log("Updating review with ID:", id);
-  console.log("Updated name:", updatedName);
-  console.log("Updated review:", updatedReview);
+  //   console.log("Updating review with ID:", id);
+  //   console.log("Updated name:", updatedName);
+  //   console.log("Updated review:", updatedReview);
 }
 
 // Event delegation for Update button click
