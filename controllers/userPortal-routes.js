@@ -4,6 +4,7 @@ const User = require("../models/user");
 
 const router = require("express").Router();
 
+// route to get to review portal
 router.get("/", async (req, res) => {
   try {
     console.log(req.session.userId);
@@ -22,6 +23,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// route to get users reviews
 router.get("/:id", async (req, res) => {
   try {
     const userId = req.params.id;
@@ -41,7 +43,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.delete("/", async (req, res) => {
+router.delete("/delete/:id", async (req, res) => {
   try {
     const reviewData = await Review.destroy({
       where: {
