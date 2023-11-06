@@ -108,3 +108,40 @@
   background-color: white;
   overflow-y: auto;
 }
+
+@media (max-width: 1200px) {
+  .product {
+    flex-direction: column;
+    width: 500px;
+  }
+
+  .review {
+    display: block; /* Make review visible */
+    order: -1; /* Place review before item in the document flow */
+    width: 500px; /* Take full width */
+    height: 100%;
+  }
+
+  .item {
+    width: 500px; /* Take full width */
+    order: 1; /* Ensures that item comes after review */
+  }
+}
+@media (max-width: 426px) {
+  .product {
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .review {
+    display: block; /* Make review visible */
+    order: -1; /* Place review before item in the document flow */
+    width: 300px; /* Take full width */
+    height: 300%;
+  }
+
+  .item {
+    width: 300px; /* Take full width */
+    order: 1; /* Ensures that item comes after review */
+  }
+}
