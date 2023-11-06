@@ -8,8 +8,6 @@ async function genericReviewHandler(event) {
   const item_id = form.dataset.itemId;
   const reviewInputId = form.dataset.reviewInputId;
 
-  console.log("hello world", item_id, reviewInputId);
-
   const review = document.getElementById(reviewInputId).value;
   console.log(review);
 

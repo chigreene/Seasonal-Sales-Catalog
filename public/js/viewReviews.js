@@ -84,7 +84,6 @@ document
   .getElementById("winterReviewDiv")
   .addEventListener("click", function (event) {
     event.preventDefault();
-    console.log("helloWorld");
     resetWinterDisplay();
   });
 
@@ -128,7 +127,6 @@ document
   .getElementById("springReviewDiv")
   .addEventListener("click", function (event) {
     event.preventDefault();
-    console.log("helloWorld");
     resetSpringDisplay();
   });
 
@@ -172,6 +170,5 @@ document
   .getElementById("summerReviewDiv")
   .addEventListener("click", function (event) {
     event.preventDefault();
-    console.log("helloWorld");
     resetSummerDisplay();
   });
