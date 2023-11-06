@@ -1,6 +1,8 @@
 // test comment
 require("dotenv").config();
 const path = require("path");
+const cors = require('cors')
+const morgan = require('morgan')
 const express = require("express");
 const exphbs = require("express-handlebars");
 const session = require("express-session");
@@ -26,7 +28,8 @@ const sess = {
     db: sequelize,
   }),
 };
-
+app.use(morgan('tiny'))
+app.use(cors())
 app.use(session(sess));
 const hbs = exphbs.create({ helpers: helpers });
 
