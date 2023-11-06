@@ -2,18 +2,22 @@
   {
     "username": "Sal",
     "review": "The Jack-O-Lantern is so scary on my porch at night!",
+    "user_id": "1",
     "item_id": "1"
   },{
     "username": "Sal",
     "review": "The trick or treaters loved the Reeses!",
+    "user_id": "1",
     "item_id": "2"
   },{
     "username": "Sal",
     "review": "The skeletons brought a scary presence to my yard!",
+    "user_id": "1",
     "item_id": "3"
   },{
     "username": "Sal",
     "review": "I loved wearing my witches hat while handing out candy!",
+    "user_id": "1",
     "item_id": "4"
   }
 ]

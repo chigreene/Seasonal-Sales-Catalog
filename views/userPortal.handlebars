@@ -1,0 +1,14 @@
+<div>
+  <h2>Your reviews</h2>
+  {{#each reviews}}
+    <div>
+      {{this.item.name}}
+    </div>
+    <div>
+      {{this.review}}
+    </div>
+    <div>
+      {{this.createdAt}}
+    </div>
+  {{/each}}
+</div>
