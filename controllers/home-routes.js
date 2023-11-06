@@ -25,12 +25,18 @@ router.get("/", async (req, res) => {
       reviewsSkeleton,
       reviewsWitchesHat,
       reviewsDreidal,
+      reviewsChristmasTree,
+      reviewsDarthVadar,
+      reviewsJuly4thHat,
     ] = await Promise.all([
       getReviewsByItemId(1),
       getReviewsByItemId(2),
       getReviewsByItemId(3),
       getReviewsByItemId(4),
       getReviewsByItemId(5),
+      getReviewsByItemId(6),
+      getReviewsByItemId(7),
+      getReviewsByItemId(8),
     ]);
 
     res.render("home", {
@@ -40,6 +46,9 @@ router.get("/", async (req, res) => {
       reviewsSkeleton,
       reviewsWitchesHat,
       reviewsDreidal,
+      reviewsChristmasTree,
+      reviewsDarthVadar,
+      reviewsJuly4thHat,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {

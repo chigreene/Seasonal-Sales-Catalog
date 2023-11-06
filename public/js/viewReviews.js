@@ -46,7 +46,7 @@ document
 
 // function to hide all reviews and show the selected review
 function updateWinterReviewDisplay(showReviewId) {
-  const reviewIds = ["review5"];
+  const reviewIds = ["review5", "review6"];
 
   // hide all reviews
   reviewIds.forEach((reviewId) => {
@@ -77,6 +77,7 @@ function attachWinterEventToItem(itemId, reviewId) {
 
 // attach the event listeners to items
 attachWinterEventToItem("item-5", "review5");
+attachWinterEventToItem("item-6", "review6");
 
 // resets the display when the sample is clicked
 document
@@ -101,18 +102,18 @@ function updateSpringReviewDisplay(showReviewId) {
   document.getElementById(showReviewId).style.display = "block";
 
   // update the display of the reviewDiv and itemDiv elements
-  document.getElementById("winterReviewDiv").style.display = "block";
-  document.getElementById("winterItemDiv").classList.remove("item-full-width");
+  document.getElementById("springReviewDiv").style.display = "block";
+  document.getElementById("springItemDiv").classList.remove("item-full-width");
 }
 
 // function to reset display to original state
-function resetWSpringDisplay() {
+function resetSpringDisplay() {
   console.log("hello world");
-  document.getElementById("winterReviewDiv").style.display = "none";
-  document.getElementById("winterItemDiv").classList.add("item-full-width");
+  document.getElementById("springReviewDiv").style.display = "none";
+  document.getElementById("springItemDiv").classList.add("item-full-width");
 }
 // helper function to attach the event listeners to items
-function attachEventToItem(itemId, reviewId) {
+function attachSpringEventToItem(itemId, reviewId) {
   document.getElementById(itemId).addEventListener("click", function (event) {
     event.preventDefault();
     updateSpringReviewDisplay(reviewId);
@@ -120,13 +121,57 @@ function attachEventToItem(itemId, reviewId) {
 }
 
 // attach the event listeners to items
-attachEventToItem("item-7", "review7");
+attachSpringEventToItem("item-7", "review7");
 
 // resets the display when the sample is clicked
 document
-  .getElementById("winterReviewDiv")
+  .getElementById("springReviewDiv")
   .addEventListener("click", function (event) {
     event.preventDefault();
     console.log("helloWorld");
     resetSpringDisplay();
+  });
+
+// functions to hide and view summer item and reviews
+
+function updateSummerReviewDisplay(showReviewId) {
+  const reviewIds = ["review8"];
+
+  // hide all reviews
+  reviewIds.forEach((reviewId) => {
+    document.getElementById(reviewId).style.display = "none";
+  });
+
+  // show the selected review
+  document.getElementById(showReviewId).style.display = "block";
+
+  // update the display of the reviewDiv and itemDiv elements
+  document.getElementById("summerReviewDiv").style.display = "block";
+  document.getElementById("summerItemDiv").classList.remove("item-full-width");
+}
+
+// function to reset display to original state
+function resetSummerDisplay() {
+  console.log("hello world");
+  document.getElementById("summerReviewDiv").style.display = "none";
+  document.getElementById("summerItemDiv").classList.add("item-full-width");
+}
+// helper function to attach the event listeners to items
+function attachSummerEventToItem(itemId, reviewId) {
+  document.getElementById(itemId).addEventListener("click", function (event) {
+    event.preventDefault();
+    updateSummerReviewDisplay(reviewId);
+  });
+}
+
+// attach the event listeners to items
+attachSummerEventToItem("item-8", "review8");
+
+// resets the display when the sample is clicked
+document
+  .getElementById("summerReviewDiv")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    console.log("helloWorld");
+    resetSummerDisplay();
   });
