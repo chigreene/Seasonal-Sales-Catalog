@@ -19,15 +19,17 @@ router.get("/", async (req, res) => {
     const itemData = await Item.findAll({});
     const items = itemData.map((item) => item.get({ plain: true }));
 
-    const userIdData = await User.findOne({
-      where: {
-        id: req.session.userId,
-      },
-    });
+    // if (!userIdData) {
+    //   // handle the case where no user is found
+    //   console.error("User not found");
+    //   return res.status(404).json({ error: "User not found" });
+    // }
 
-    const user = userIdData.get({ plain: true });
-
-    console.log("user", user);
+    // if (!req.session.userId) {
+    //   // handle the case where there is no user ID in the session
+    //   console.error("No user ID in session");
+    //   return res.status(401).json({ error: "No user logged in" });
+    // }
 
     // const userReviewData = Review.findAll({
     //   where: {
@@ -71,7 +73,7 @@ router.get("/", async (req, res) => {
 
     res.render("home", {
       items,
-      user,
+
       reviewsPumpkin,
       reviewsReeses,
       reviewsSkeleton,
@@ -83,6 +85,7 @@ router.get("/", async (req, res) => {
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

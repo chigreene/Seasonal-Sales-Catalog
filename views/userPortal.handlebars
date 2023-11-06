@@ -1,14 +1,25 @@
-<div>
-  <h2>Your reviews</h2>
-  {{#each reviews}}
-    <div>
-      {{this.item.name}}
-    </div>
-    <div>
-      {{this.review}}
-    </div>
-    <div>
-      {{this.createdAt}}
-    </div>
-  {{/each}}
+<div class="container mt-5">
+  <h1 class="mb-4">Welcome to your Portal</h1>
+  <div class="mb-3">
+    <a href="/user/{{user.id}}" class="btn btn-primary">Click to see your
+      reviews</a>
+  </div>
+
+  <div>
+    {{#each reviews}}
+      <div class="card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">{{this.item.name}}</h5>
+          <p class="card-text">{{this.review}}</p>
+          <p class="card-text"><small class="text-muted">Posted on
+              {{this.createdAt}}</small></p>
+          <button class="btn btn-warning">Update</button>
+          <button
+            data-id="{{reviews.id}}"
+            class="btn btn-danger"
+          >Delete</button>
+        </div>
+      </div>
+    {{/each}}
+  </div>
 </div>
