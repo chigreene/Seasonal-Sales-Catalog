@@ -3,6 +3,26 @@ const Review = require("../models/review");
 
 const router = require("express").Router();
 
+// Function to get reviews by item_id
+async function getReviewsByItemId(itemId) {
+  const reviewData = await Review.findAll({
+    where: {
+      item_id: itemId,
+    },
+  });
+  return reviewData.map((review) => review.get({ plain: true }));
+}
+
+// Function to get reviews by item_id
+async function getReviewsByItemId(itemId) {
+  const reviewData = await Review.findAll({
+    where: {
+      item_id: itemId,
+    },
+  });
+  return reviewData.map((review) => review.get({ plain: true }));
+}
+
 // set up middleware
 const checkLoginStatus = (req, res, next) => {
   if (!req.session.loggedIn) {
@@ -41,56 +61,28 @@ router.get('/login/recover', (req, res) => {
 router.get('/seasons', checkLoginStatus, async (req, res) => {
   try {
     const itemData = await Item.findAll({});
-    const items = itemData.map((item) => {
-      return item.get({
-        plain: true,
-      });
-    });
-    // getting pumpkin reviews from database and mapping individual reviews into correct format
-    const reviewPumpkin = await Review.findAll({
-      where: {
-        item_id: 1,
-      },
-    });
-    const reviewsPumpkin = reviewPumpkin.map((item) => {
-      return item.get({
-        plain: true,
-      });
-    });
-    // getting Reeses reviews and mapping them in to correct format
-    const reviewReeses = await Review.findAll({
-      where: {
-        item_id: 2,
-      },
-    });
-    const reviewsReeses = reviewReeses.map((item) => {
-      return item.get({
-        plain: true,
-      });
-    });
-    // getting skeleton reviews and mapping them into usable format
-    const reviewSkeleton = await Review.findAll({
-      where: {
-        item_id: 3,
-      },
-    });
-    const reviewsSkeleton = reviewSkeleton.map((item) => {
-      return item.get({
-        plain: true,
-      });
-    });
+    const items = itemData.map((item) => item.get({ plain: true }));
 
-    // getting witches hat reviews and mapping them into usable format
-    const reviewWitchesHat = await Review.findAll({
-      where: {
-        item_id: 4,
-      },
-    });
-    const reviewsWitchesHat = reviewWitchesHat.map((item) => {
-      return item.get({
-        plain: true,
-      });
-    });
+    // Use Promise.all to fetch all reviews in parallel
+    const [
+      reviewsPumpkin,
+      reviewsReeses,
+      reviewsSkeleton,
+      reviewsWitchesHat,
+      reviewsDreidal,
+      reviewsChristmasTree,
+      reviewsDarthVadar,
+      reviewsJuly4thHat,
+    ] = await Promise.all([
+      getReviewsByItemId(1),
+      getReviewsByItemId(2),
+      getReviewsByItemId(3),
+      getReviewsByItemId(4),
+      getReviewsByItemId(5),
+      getReviewsByItemId(6),
+      getReviewsByItemId(7),
+      getReviewsByItemId(8),
+    ]);
 
     res.render("seasons", {
       items,
@@ -98,6 +90,10 @@ router.get('/seasons', checkLoginStatus, async (req, res) => {
       reviewsReeses,
       reviewsSkeleton,
       reviewsWitchesHat,
+      reviewsDreidal,
+      reviewsChristmasTree,
+      reviewsDarthVadar,
+      reviewsJuly4thHat,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {

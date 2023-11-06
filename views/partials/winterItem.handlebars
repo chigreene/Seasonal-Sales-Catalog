@@ -1,0 +1,78 @@
+<div>
+
+  {{#each items}}
+    {{#if (check_equality season "winter")}}
+      {{! item div }}
+      <div id="{{id}}" class="inner-item-div">
+        <h4>{{name}}</h4>
+        <img
+          {{!-- refractor to img-{{id}} --}}
+          id="item-{{id}}"
+          class="custom-hover"
+          src="/images/{{filename}}"
+          alt="dataBase Image"
+        />
+        {{! modal button }}
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          {{!-- refractor to modal-{{id}} --}}
+          data-bs-target="#modal-{{id}}"
+        >
+          Add review
+        </button>
+      </div>
+
+      {{! Modal }}
+      <div
+        class="modal fade"
+        {{!-- refractor to modal-{{id}} --}}
+        id="modal-{{id}}"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Post a review!</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              {{!-- refractor to reviewForm-{{id}} --}}
+              <form
+                id="formId-{{id}}"
+                class="review-form"
+                data-item-id="{{id}}"
+                data-review-input-id="reviewInput-{{id}}"
+              >
+                <div class="mb-3">
+                  <label for="reviewInput-{{id}}" class="form-label">Add review
+                    below.</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    {{!-- refractor to reviewInput-{{id}} --}}
+                    id="reviewInput-{{id}}"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="submit"
+                    class="btn btn-secondary"
+                  >Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/if}}
+  {{/each}}
+</div>

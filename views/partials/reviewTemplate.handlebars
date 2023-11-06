@@ -1,0 +1,8 @@
+{{!-- refractor to reviewDiv-{{id}} --}}
+
+{{#each reviews}}
+  <div class="inner-review-div">
+    <p>{{this.review}}</p>
+    <li>{{this.username}}</li>
+  </div>
+{{/each}}
