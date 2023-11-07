@@ -1,63 +1,153 @@
 <div id="seasons-container">
 
-    {{> seasonBanner}}
+{{> seasonBanner}}
 
-    <section class="season-nav">
-        <nav>
-            <ul>
-                <li>
-                    <a>
-                        Fall
-                    </a>
-                </li>
+<section class="season-nav">
+    <nav>
+        <ul>
+            <li>
+                <a>
+                Fall
+                </a>
+            </li>
 
-                <li>
-                    <a>
-                        Winter
-                    </a>
-                </li>
+            <li>
+                <a>
+                Winter
+                </a>
+            </li>
 
-                <li>
-                    <a>
-                        Summer
-                    </a>
-                </li>
+            <li>
+                <a>
+                Summer
+                </a>
+            </li>
+            
+            <li>
+                <a>
+                Spring
+                </a>
+            </li>
 
-                <li>
-                    <a>
-                        Spring
-                    </a>
-                </li>
+        </ul>
+    </nav>
+</section>
 
-            </ul>
-        </nav>
-    </section>
+<h3>Spice up you browsing with some music</h3>
 
-    <section class="season-container">
-        <h2>Four Season</h2>
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/174667031&amp;show_artwork=false">
+</iframe>
 
-        <div class="carousel" data-flickity='{ "autoPlay": true }'>
-            {{!-- add for each statment later for addding all products and reviews --}}
-            <div class="carousel-cell">
-                <h3>Product name</h3>
-                <div class="product">
-                    <div id="itemClick" class="item item-full-width">
-                        {{> item}}
+<section class="season-container">
+        <h2>Season</h2>
 
-                    </div>
-                    <div id="sampleClick" class="review">
-                        <p class="reviewClose">Close Reviews</p>
-                        {{> review}}
-                    </div>
-                </div>
-            </div>
+<div class="carousel" data-flickity='{ "autoPlay": true }'>
+    {{!-- add for each statement later for adding all products and reviews --}}
+    <div class="carousel-cell">
+          <h3>Product name</h3>
+          <div class="product">
+                        <div id="itemDiv" class = "item item-full-width">
+                            {{> fallItem}}
+                        
+                        </div>
+                        <div id="reviewDiv" class="review" >
+                            <p class="reviewClose">Close Reviews</p>
 
-        </div>
-        <script src="/js/login.js"></script>
-        <script src="/js/seasonSwitch.js"></script>
-        <script src="/js/postReview.js"></script>
-        <script src="/js/viewReviews.js"></script>
-        <script src="/js/fallItem1.js"></script>
-        <script src="/js/fallItem2.js"></script>
-        <script src="/js/fallItem3.js"></script>
-        <script src="/js/fallItem4.js"></script>
+                                <div id="review1" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsPumpkin }}
+                                </div>
+
+                                <div id="review2" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsReeses }}
+                                </div>
+
+                                <div id="review3" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsSkeleton }}
+                                </div>
+
+                                <div id="review4" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsWitchesHat }}
+                                </div>
+
+                        </div>                    
+          </div>
+    </div>
+
+    <div class="carousel-cell">
+          <h3>Product name</h3>
+          <div class="product">
+                        <div id="winterItemDiv" class = "item item-full-width">
+                            {{> winterItem}}
+                        
+                        </div>
+                        <div id="winterReviewDiv" class="review" >
+                            <p class="reviewClose">Close Reviews</p>
+
+                                <div id="review5" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsDreidal }}
+                                </div>
+
+                                <div id="review6" class="review-handlebars">
+                                {{> reviewTemplate reviews=reviewsChristmasTree }}
+                                </div>
+
+                        </div>                    
+          </div>
+    </div>
+
+    <div class="carousel-cell">
+          <h3>Spring Items</h3>
+          <div class="product">
+                        <div id="springItemDiv" class = "item item-full-width">
+                            {{> springItem}}
+                        
+                        </div>
+                        <div id="springReviewDiv" class="review" >
+                            <p class="reviewClose">Close Reviews</p>
+                                <div id="review7" class="review-handlebars">
+                                    {{> reviewTemplate reviews=reviewsDarthVadar }}
+                                </div>
+                                
+
+                        </div>                    
+          </div>
+    </div>
+
+    <div class="carousel-cell">
+          <h3>Summer Items</h3>
+          <div class="product">
+                        <div id="summerItemDiv" class = "item item-full-width">
+                            {{> summerItem}}
+                        
+                        </div>
+                        <div id="summerReviewDiv" class="review" >
+                            <p class="reviewClose">Close Reviews</p>
+
+                                <div id="review8" class="review-handlebars">
+                                    {{> reviewTemplate reviews=reviewsJuly4thHat }}
+                                </div>
+                        </div>                    
+          </div>
+    </div>
+
+    
+    
+</div>
+
+{{!-- <div class="costume-rec-div">
+    
+        <label for="gptInput"> Enter key words for your suggestion:</label>
+        <input type="text" id="gptInput" name="gptInput" required>
+        <button type="submit" id="submitBtn">Submit</button>
+    
+    <div id="responseDiv">
+
+    </div>
+</div>
+
+<script src="/js/costumeRecommendation.js"></script> --}}
+<script src="/js/login.js"></script>
+<script src="/js/postReview.js"></script>
+<script src="/js/viewReviews.js"></script>
+

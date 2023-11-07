@@ -68,7 +68,7 @@ router.get("/seasons", async (req, res) => {
       getReviewsByItemId(8),
     ]);
 
-    res.render("season", {
+    res.render("seasons", {
       items,
       reviewsPumpkin,
       reviewsReeses,
