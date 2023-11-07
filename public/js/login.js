@@ -17,11 +17,16 @@ const loginButton = document.querySelector("#login");
 const logoutButton = document.querySelector("#logout");
 const recoverButton = document.querySelector('#recover')
 const updateButton = document.querySelector('#update')
+const reLoginButton=document.querySelector('#reLogin')
 //Div
 const passwordRecovDiv = document.querySelector('#passwordRecovDiv')
 
 // Setting States
-
+document.addEventListener('DOMContentLoaded',()=>{
+    updateButton.style.display = 'none'
+    reLoginButton.style.display = 'none'
+    passwordRecovDiv.style.display = 'none'
+})
 
 //functions
 const create = async (event) => {
@@ -53,6 +58,27 @@ const login = async (event) => {
     console.log('clicked')
     const both = both_Em_Us.value.trim();
     const password = loginPasswordInput.value.trim();
+
+    if (both && password) {
+        const response = await fetch('/api/users/login', {
+            method: 'POST',
+            body: JSON.stringify({ both, password }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert('Failed to log in.');
+        }
+    }
+};
+
+const relogin = async (event) => {
+    event.preventDefault();
+    console.log('clicked')
+    const both = recover_Us_em.value.trim();
+    const password = updatePassword.value.trim();
 
     if (both && password) {
         const response = await fetch('/api/users/login', {
@@ -126,7 +152,9 @@ const recoverPwd = async (event) => {
 
         if (response.ok) {
             console.log('password Changed')
-            document.location.replace('/');
+            updateButton.style.display='none'
+            reLoginButton.style.display='block'
+
         } else {
             updatePassword.value = ''
             console.log('cannot use the same password at before retry')
@@ -137,6 +165,9 @@ const recoverPwd = async (event) => {
 
 if (loginButton) {
     loginButton.addEventListener('click', login)
+}
+if (reLoginButton) {
+    reLoginButton.addEventListener('click', relogin)
 }
 if (logoutButton) {
     logoutButton.addEventListener('click', logout)

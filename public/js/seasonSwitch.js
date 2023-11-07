@@ -1,5 +1,5 @@
-// var currentDate = new Date();
-var currentDate = new Date(2023,6,1);
+var currentDate = new Date();
+var currentDate = new Date(2024,0,1);
 
 class Season {
     constructor(season, dateStart, dateEnd) {

@@ -30,19 +30,19 @@ router.get('/login', (req, res) => {
   } catch (err) {
     res.status(500).json('unable to fufill request')
   }
+});
 
-  router.get('/login/recover', (req, res) => {
-    try {
-      res.status(200).render('loginRecover')
-    }
-    catch (err) {
-      res.status(500).json('unable to fufill request')
-    }
-
-  });
+router.get('/login/recover', (req, res) => {
+  try {
+    res.status(200).render('loginRecover')
+  }
+  catch (err) {
+    res.status(500).json('unable to fufill request')
+  }
 
 });
-router.get("/seasons", async (req, res) => {
+
+router.get('/seasons', checkLoginStatus, async (req, res) => {
   try {
     const itemData = await Item.findAll({});
     const items = itemData.map((item) => item.get({ plain: true }));
