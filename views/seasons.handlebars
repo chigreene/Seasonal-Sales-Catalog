@@ -1,0 +1,63 @@
+<div id="seasons-container">
+
+    {{> seasonBanner}}
+
+    <section class="season-nav">
+        <nav>
+            <ul>
+                <li>
+                    <a>
+                        Fall
+                    </a>
+                </li>
+
+                <li>
+                    <a>
+                        Winter
+                    </a>
+                </li>
+
+                <li>
+                    <a>
+                        Summer
+                    </a>
+                </li>
+
+                <li>
+                    <a>
+                        Spring
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </section>
+
+    <section class="season-container">
+        <h2>Four Season</h2>
+
+        <div class="carousel" data-flickity='{ "autoPlay": true }'>
+            {{!-- add for each statment later for addding all products and reviews --}}
+            <div class="carousel-cell">
+                <h3>Product name</h3>
+                <div class="product">
+                    <div id="itemClick" class="item item-full-width">
+                        {{> item}}
+
+                    </div>
+                    <div id="sampleClick" class="review">
+                        <p class="reviewClose">Close Reviews</p>
+                        {{> review}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="/js/login.js"></script>
+        <script src="/js/seasonSwitch.js"></script>
+        <script src="/js/postReview.js"></script>
+        <script src="/js/viewReviews.js"></script>
+        <script src="/js/fallItem1.js"></script>
+        <script src="/js/fallItem2.js"></script>
+        <script src="/js/fallItem3.js"></script>
+        <script src="/js/fallItem4.js"></script>
