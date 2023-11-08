@@ -119,7 +119,16 @@ router.get('/seasons', checkLoginStatus, async (req, res) => {
   }
 });
 
-router.get('*', checkLoginStatus, (req, res) => {
+// router.get('*', checkLoginStatus, (req, res) => {
+//   try {
+//     res.redirect('/seasons');
+//   } catch (err) {
+//     res.status(404).json('Page not found');
+//   }
+// });
+
+
+router.get('/', checkLoginStatus, (req, res) => {
   try {
     res.redirect('/seasons');
   } catch (err) {

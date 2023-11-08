@@ -1,9 +1,10 @@
 const sequelize = require("../config/connection.js");
-const { User, Item, Review } = require("../models");
+const { User, Item, Review, Favorite } = require("../models");
 
 const userSeeds = require("./userSeeds.json");
 const itemSeeds = require("./itemSeeds.json");
 const reviewSeeds = require("./reviewSeeds.json");
+const favoriteSeeds = require("./favoriteSeeds.json");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -16,6 +17,10 @@ const seedAll = async () => {
     returning: true,
   });
   await Review.bulkCreate(reviewSeeds, {
+    individualHooks: true,
+    returning: true,
+  });
+  await Favorite.bulkCreate(favoriteSeeds, {
     individualHooks: true,
     returning: true,
   });

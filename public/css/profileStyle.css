@@ -1,0 +1,29 @@
+.profile-body{
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    gap: 1rem;
+}
+
+.profile-body h2{
+    font-size: 4rem;
+}
+
+.favorites-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow-x: scroll;
+    outline: 1px solid black;
+    gap: .5rem;
+}
+
+/* .profile-item-img{
+    width: 300px;
+    height: 350px;
+} */
+
+.profile-unfavorite{
+    background-color: greenyellow;
+    border-radius: 15px;
+}

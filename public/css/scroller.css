@@ -96,3 +96,15 @@ scroller-container {
 .test {
   background: red !important;
 }
+
+
+
+/* Testing for Profile */
+
+.favorites-box{
+  display: flex;
+  min-height: 10rem;
+  min-width: 25rem;
+  overflow-x: scroll;
+  outline: 1px solid black;
+}
