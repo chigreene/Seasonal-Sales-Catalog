@@ -18,8 +18,9 @@ async function getReviewsByItemId(itemId) {
 const checkLoginStatus = (req, res, next) => {
   if (!req.session.loggedIn) {
     return res.redirect('/login');
+  }else{
+    next();
   }
-  next();
 };
 
 //Should this be a seperate router?
@@ -28,9 +29,14 @@ router.get('/login', (req, res) => {
     res.render('login', {
       loggedIn: req.session.loggedIn,
     });
+
+    if(req.session.loggedIn){
+      res.redirect('/seasons')
+    }
   } catch (err) {
     res.status(500).json('unable to fufill request')
   }
+
 });
 
 router.get('/login/recover', (req, res) => {
@@ -117,15 +123,83 @@ router.get('/seasons', checkLoginStatus, async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+  if (!req.session.loggedIn) {
+    res.redirect('/login')
+  }
 });
 
+// route to get to review portal
+router.get("/user", async (req, res) => {
+  try {
+    console.log(req.session.userId);
+    const userIdData = await User.findOne({
+      where: {
+        id: req.session.userId,
+      },
+    });
+
+    const user = userIdData.get({ plain: true });
+
+    res.status(200).render("userPortal", { user, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// route to get users reviews
+router.get("user/:id", async (req, res) => {
+  try {
+    const userId = req.params.id;
+
+    const reviewData = await Review.findAll({
+      where: {
+        user_id: userId,
+      },
+      include: Item,
+    });
+    const reviews = reviewData.map((review) => review.get({ plain: true }));
+
+    res.status(200).render("userPortal", { reviews, loggedIn: req.session.loggedIn, });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// router.update("/update/:id");
+
+// ...
+
+// route to get users reviews
+router.get('/user/:id', async (req, res) => {
+  try {
+    const userId = req.params.id;
+
+    const reviewData = await Review.findAll({
+      where: {
+        user_id: userId,
+      },
+      include: Item,
+    });
+    const reviews = reviewData.map((review) => review.get({ plain: true }));
+
+    res.status(200).render('userPortal', { reviews, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// Move the catch-all route to the end
 router.get('*', checkLoginStatus, (req, res) => {
   try {
-    res.redirect('/seasons');
+    res.redirect('/login');
   } catch (err) {
     res.status(404).json('Page not found');
   }
 });
+
 
 
 module.exports = router;

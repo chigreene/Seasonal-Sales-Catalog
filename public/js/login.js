@@ -67,7 +67,7 @@ const login = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/seasons');
         } else {
             alert('Failed to log in.');
         }
