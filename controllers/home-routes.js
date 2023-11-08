@@ -17,33 +17,31 @@ async function getReviewsByItemId(itemId) {
 // set up middleware
 const checkLoginStatus = (req, res, next) => {
   if (!req.session.loggedIn) {
-    return res.redirect('/login');
+    return res.redirect("/login");
   }
   next();
 };
 
 //Should this be a seperate router?
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   try {
-    res.render('login', {
+    res.render("login", {
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
-    res.status(500).json('unable to fufill request')
+    res.status(500).json("unable to full fill request");
   }
 });
 
-router.get('/login/recover', (req, res) => {
+router.get("/login/recover", (req, res) => {
   try {
-    res.status(200).render('loginRecover')
+    res.status(200).render("loginRecover");
+  } catch (err) {
+    res.status(500).json("unable to fufill request");
   }
-  catch (err) {
-    res.status(500).json('unable to fufill request')
-  }
-
 });
 
-router.get('/seasons', checkLoginStatus, async (req, res) => {
+router.get("/seasons", checkLoginStatus, async (req, res) => {
   try {
     const itemData = await Item.findAll({});
     const items = itemData.map((item) => item.get({ plain: true }));
@@ -119,13 +117,12 @@ router.get('/seasons', checkLoginStatus, async (req, res) => {
   }
 });
 
-router.get('*', checkLoginStatus, (req, res) => {
-  try {
-    res.redirect('/seasons');
-  } catch (err) {
-    res.status(404).json('Page not found');
-  }
-});
-
+// router.get('*', checkLoginStatus, (req, res) => {
+//   try {
+//     res.redirect('/seasons');
+//   } catch (err) {
+//     res.status(404).json('Page not found');
+//   }
+// });
 
 module.exports = router;

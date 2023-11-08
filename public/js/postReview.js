@@ -24,7 +24,7 @@ async function genericReviewHandler(event) {
     console.log("error in PostReview");
     alert("failed to post comment.");
   } else {
-    document.location.replace("/");
+    document.location.replace("/seasons");
   }
 }
 
