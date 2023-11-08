@@ -15,8 +15,29 @@ router.get("/", async (req, res) => {
       });
   
       const user = userIdData.get({ plain: true });
-  
-      res.status(200).render("userProfile", { user });
+      const reviewData = await Review.findAll({
+        where: {
+          user_id: user.id,
+        },
+        include: Item,
+      })
+
+      const reviews = reviewData.map((review) => review.get({ plain: true }));
+
+      const favoriteData = await Favorite.findAll({
+        where: {
+          user_id: user.id,
+        },
+        include: Item,
+      })
+
+      const favorites = favoriteData.map((favorite) => favorite.get({ plain: true }));
+
+      if (user.id === req.session.userId) {
+        user.selected = true;
+      }
+
+      res.status(200).render("userProfile", { user, favorites, reviews });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
