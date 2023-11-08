@@ -1,0 +1,88 @@
+<div id="profile-body" class="profile-body">
+    <div id="profile-username" class="profile-username">
+        <h2>{{user.user_name}}</h2>
+    </div>
+    <div id="favorites" class="favorites">
+        <h3>FAVORITES</h3>
+        <div id="favorites-box" class="favorites-box">
+            {{#each favorites}}
+            <div id="favorite-card-{{../user.id}}" class="card mb-2">
+                <img src="/images/{{this.item.filename}}" alt="dataBase Image" style="width: 300px; height: 350px;">
+                <h4>{{this.item.name}}</h4>
+                {{#if ../user.selected}}
+                    <button id="profile-unfavorite-{{../user.id}}" class="profile-unfavorite">Unfavorite</button>
+                {{/if}}
+            </div>
+        {{/each}}
+        </div>
+    </div>
+    <div id="reviews" class="reviews">
+        <h3>REVIEWS</h3>
+        <div id="review-box" class="review-box">
+            {{#each reviews}}
+                {{!-- <div id="review-card-{{../user.id}}" class="review-card">
+                    <h4>{{this.item.name}}</h4>
+                    <p>{{this.review}}</p>
+                    {{#if ../user.selected}}
+                        <div class="review-admin">
+                            <button class="review-edit-{{../user.id}}">Edit</button>
+                            <button class="review-delete-{{../user.id}}">Delete</button>
+                        </div>
+                    {{/if}}
+                </div> --}}
+                {{!-- {{> review selected=../user.selcted}} --}}
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.item.name}}</h5>
+                        <p class="card-text">{{this.review}}</p>
+                        <p class="card-text"><small class="text-muted">Posted on
+                            {{this.createdAt}}</small></p>
+
+                        <!-- Update form (initially hidden) -->
+                        <div
+                        id="update-form-{{this.id}}"
+                        class="update-form"
+                        style="display:none;"
+                        >
+                        <form data-id="{{this.id}}">
+
+                            <div class="form-group">
+                            <label for="review-text-{{this.id}}">Review</label>
+                            <textarea
+                                class="form-control"
+                                id="review-text-{{this.id}}"
+                                rows="3"
+                                required
+                            >{{this.review}}</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success">Submit Update</button>
+                            <button
+                            type="button"
+                            class="btn btn-secondary cancel-update"
+                            >Cancel</button>
+                        </form>
+                        </div>
+                        {{#if ../user.selected}}
+                            <!-- Update button -->
+                            <button
+                            data-id="{{this.id}}"
+                            class="btn btn-warning updateButton"
+                            >Update</button>
+
+                            <!-- Delete button -->
+                            <button
+                            data-id="{{this.id}}"
+                            class="deleteButton btn btn-danger"
+                            >Delete</button>
+                        {{/if}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+        
+    </div>
+
+</div>
+
+<script src="/js/delete.js"></script>
+{{!-- <script src="/js/update.js"></script> --}}
