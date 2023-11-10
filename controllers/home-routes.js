@@ -2,6 +2,7 @@ const User = require("../models/user");
 const Item = require("../models/item");
 const Review = require("../models/review");
 
+
 const router = require("express").Router();
 
 // Function to get reviews by item_id
@@ -192,7 +193,36 @@ router.get('/user/:id', async (req, res) => {
 });
 
 // Move the catch-all route to the end
-router.get('*', checkLoginStatus, (req, res) => {
+router.get('/seasons/:season', checkLoginStatus, async (req, res) => {
+  try {
+    const season = req.params.season;
+
+    const itemData = await Item.findAll({
+      where: {
+        season: season,
+      },
+    });
+
+    const items = itemData.map((item) => item.get({ plain: true }));
+
+    res.render('oneSeason', { items, season });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+
+
+});
+// router.get('*', checkLoginStatus, (req, res) => {
+//   try {
+//     res.redirect('/seasons');
+//   } catch (err) {
+//     res.status(404).json('Page not found');
+//   }
+// });
+
+
+router.get('/', checkLoginStatus, (req, res) => {
   try {
     res.redirect('/login');
   } catch (err) {
