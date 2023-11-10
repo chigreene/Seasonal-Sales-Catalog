@@ -23,8 +23,19 @@ const checkLoginStatus = (req, res, next) => {
   next();
 };
 
-//Should this be a seperate router?
+//change login Page 
+const seasonSwtich= async ()=>{
+  //my seasonswitch js will be usefull
+  // everything would be based on the date
+  //I would need to create a date object then logic to get season it is then
+  //now im able to make the datebase query based on the season once we have the season
+  // make a query on the holiday send that all to the login route 
+  // then once it's inside the data attribute use js to make img tags for them 
+}
+
 router.get('/login', (req, res) => {
+  const currentDate = new Date();
+
   try {
     res.render('login', {
       loggedIn: req.session.loggedIn,
@@ -140,6 +151,9 @@ router.get('/seasons/:season', checkLoginStatus, async (req, res) => {
 
 
 });
+
+
+
 // router.get('*', checkLoginStatus, (req, res) => {
 //   try {
 //     res.redirect('/seasons');
