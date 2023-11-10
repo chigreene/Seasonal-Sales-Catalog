@@ -1,14 +1,62 @@
-.login h1{
-text-align:center;
+:root {
+    --primary:#22503D;
+    --secondary: #8B4513;
+    --tertiary: #FFDB58;
+    --background:#FDD9B5;
+    --bold:800;
+    --raidus:8px;
+    --button-primary:#A52A2A;
+    --button-success:#347C3C;
 }
 
-/* can be changed later */
-.image-container{
-    background-color: red;
-    height:200px;
-    width:200px;
+/* Styling the Page */
+body{
+    background-color:var(--background)
 }
-.seasons-img{
-display:flex;
-justify-content: center;
+/* Banner */
+.banner{
+    display:flex;
+    justify-content:space-between;
 }
+
+#seasonSwitch {
+color: var(--primary);
+font-size:4em;
+font-weight:var(--bold);
+}
+
+.login h1{
+text-align:center;
+color:var(--secondary)
+}
+#preventAcess{
+    z-index:1;
+    width: fit-content;
+    position: relative;
+    top:250px;
+    left:350px;
+    border:5px solid white;
+    background-color:var(--tertiary);
+    padding:1%;
+    font-weight:var(--bold);
+    border-radius: var(--raidus);
+}
+
+/* Changing BootStrap Buttons */
+.btn-primary{
+    background-color:var(--button-primary);
+    border-color:white;
+}
+.btn-primary:hover{
+        background-color: var(--secondary) !important;
+        border-color: white !important;
+}
+ .btn-success {
+     background-color: var(--button-success);
+     border-color: white;
+ }
+
+ .btn-success:hover {
+     background-color: var(--primary) !important;
+     border-color: white !important;
+ }

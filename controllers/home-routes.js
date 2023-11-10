@@ -32,6 +32,8 @@ const seasonSwtich= async ()=>{
   //now im able to make the datebase query based on the season once we have the season
   // make a query on the holiday send that all to the login route 
   // then once it's inside the data attribute use js to make img tags for them 
+
+  
 }
 
 router.get('/login', (req, res) => {
