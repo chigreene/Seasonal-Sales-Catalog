@@ -8,22 +8,19 @@ const favoriteSeeds = require("./favoriteSeeds.json");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-  await User.bulkCreate(userSeeds, {
-    individualHooks: true,
-    returning: true,
-  });
-  await Item.bulkCreate(itemSeeds, {
-    individualHooks: true,
-    returning: true,
-  });
-  await Review.bulkCreate(reviewSeeds, {
-    individualHooks: true,
-    returning: true,
-  });
-  await Favorite.bulkCreate(favoriteSeeds, {
-    individualHooks: true,
-    returning: true,
-  });
+
+  for (const user of userSeeds) {
+    await User.create(user);
+  }
+
+  for (const item of itemSeeds) {
+    await Item.create(item);
+  }
+
+  for (const review of reviewSeeds) {
+    await Review.create(review);
+  }
+
   process.exit(0);
 };
 
