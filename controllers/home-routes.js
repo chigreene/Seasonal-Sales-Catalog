@@ -2,6 +2,7 @@ const User = require("../models/user");
 const Item = require("../models/item");
 const Review = require("../models/review");
 
+
 const router = require("express").Router();
 
 // Function to get reviews by item_id
@@ -119,6 +120,26 @@ router.get('/seasons', checkLoginStatus, async (req, res) => {
   }
 });
 
+router.get('/seasons/:season', checkLoginStatus, async (req, res) => {
+  try {
+    const season = req.params.season;
+
+    const itemData = await Item.findAll({
+      where: {
+        season: season,
+      },
+    });
+
+    const items = itemData.map((item) => item.get({ plain: true }));
+
+    res.render('oneSeason', { items, season });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+
+
+});
 // router.get('*', checkLoginStatus, (req, res) => {
 //   try {
 //     res.redirect('/seasons');
