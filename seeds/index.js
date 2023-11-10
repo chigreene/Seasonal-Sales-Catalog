@@ -21,6 +21,10 @@ const seedAll = async () => {
     await Review.create(review);
   }
 
+  for (const favorite of favoriteSeeds) {
+    await Favorite.create(favorite);
+  }
+
   process.exit(0);
 };
 
