@@ -182,3 +182,7 @@ if (recoverButton) {
 if (updateButton) {
     updateButton.addEventListener('click', recoverPwd)
 }
+
+// one click login
+// make it based on a time out once your within 30min you're able to login on a singe click by storing your user name and password in some way
+// in local storage as long as it's hashed 
