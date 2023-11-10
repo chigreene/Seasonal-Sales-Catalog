@@ -4,7 +4,7 @@
         
     </ul>
 </nav>
-{{#if (eq season 'fall')}}
+{{#if (check_equality season "fall")}}
 <h3>Fall Items</h3>
 <div class="product">
     <div id="itemDiv" class="item item-full-width">
@@ -30,7 +30,7 @@
         </div>
     </div>
 </div>
-    {{else if (eq season 'winter')}}
+    {{else if (check_equality season "winter")}}
         <h3>Winter Items</h3>
         <div class="product">
             <div id="winterItemDiv" class="item item-full-width">
@@ -50,7 +50,7 @@
         
             </div>
         </div>
-    {{else if (eq season 'spring')}}
+    {{else if (check_equality season "spring")}}
             <h3>Spring Items</h3>
             <div class="product">
                 <div id="springItemDiv" class="item item-full-width">
@@ -66,7 +66,7 @@
             
                 </div>
             </div>
-        {{else if (eq season 'summer')}}
+        {{else if (check_equality season "summer")}}
                 <h3>Summer Items</h3>
                 <div class="product">
                     <div id="summerItemDiv" class="item item-full-width">
@@ -84,7 +84,9 @@
     {{/if}}
 
 
-    <script src="js/postReview.js"></script>
-    <script src="js/viewReviews.js"></script>
+    
+    <script src="/js/viewReviews.js"></script>
+    <script src="/js/postReview.js"></script>
+    
 
  
