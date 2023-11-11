@@ -38,7 +38,7 @@
 }
 
 .item {
-  margin: auto;
+  
   overflow-y: auto;
   width: 400px;
   transition: 0.5s ease;
@@ -76,10 +76,8 @@
   background-color: darkorange;
   overflow-y: auto;
   width: 400px;
-  
   display: none;
   transition: 0.5s ease;
-  
 }
 
 .review:hover {
@@ -141,7 +139,7 @@
     display: none; /* Make review visible */
     order: -1; /* Place review before item in the document flow */
     width: 500px; /* Take full width */
-    height: 400px;
+    height: 300%;
   }
 
   .item {
@@ -160,7 +158,7 @@
     display: none;
     order: -1; /* Place review before item in the document flow */
     width: 300px; /* Take full width */
-    height: 400px;
+    height: 300%;
   }
 
   .item {
