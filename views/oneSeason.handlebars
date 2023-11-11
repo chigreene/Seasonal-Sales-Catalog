@@ -1,12 +1,11 @@
-<nav>
+<section class="onePage-header">
     <h2>Holidays</h2>
-    <ul>
-        
-    </ul>
-</nav>
+    <button id="seasonsButton" class="btn btn-primary">Return to Homepage</button>
+</section>
 {{#if (check_equality season "fall")}}
 <h3>Fall Items</h3>
-<div class="product">
+
+<div class="onePage-product">
     <div id="itemDiv" class="item item-full-width">
         {{> fallItem}}
     </div>
@@ -32,7 +31,7 @@
 </div>
     {{else if (check_equality season "winter")}}
         <h3>Winter Items</h3>
-        <div class="product">
+        <div class="onePage-product">
             <div id="winterItemDiv" class="item item-full-width">
                 {{> winterItem}}
         
@@ -52,7 +51,7 @@
         </div>
     {{else if (check_equality season "spring")}}
             <h3>Spring Items</h3>
-            <div class="product">
+            <div class="onePage-product">
                 <div id="springItemDiv" class="item item-full-width">
                     {{> springItem}}
             
@@ -68,7 +67,7 @@
             </div>
         {{else if (check_equality season "summer")}}
                 <h3>Summer Items</h3>
-                <div class="product">
+                <div class="onePage-product">
                     <div id="summerItemDiv" class="item item-full-width">
                         {{> summerItem}}
                 
@@ -85,8 +84,9 @@
 
 
     
-    <script src="/js/viewReviews.js"></script>
-    <script src="/js/postReview.js"></script>
+<script src="/js/postReview.js"></script>
+
+
     
 
  

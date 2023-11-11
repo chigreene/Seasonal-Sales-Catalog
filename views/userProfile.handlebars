@@ -1,6 +1,7 @@
 <div id="profile-body" class="profile-body">
     <div id="profile-username" class="profile-username">
         <h2>{{user.user_name}}</h2>
+        <button id="seasonsButton" class="btn btn-primary">Return to Homepage</button>
     </div>
     <div id="favorites" class="favorites">
         <h3>FAVORITES</h3>
@@ -38,7 +39,6 @@
                         <p class="card-text"><small class="text-muted">Posted on
                             {{this.createdAt}}</small></p>
 
-                        <!-- Update form (initially hidden) -->
                         <div
                         id="update-form-{{this.id}}"
                         class="update-form"
@@ -85,4 +85,4 @@
 </div>
 
 <script src="/js/delete.js"></script>
-{{!-- <script src="/js/update.js"></script> --}}
+<script src="/js/update.js"></script>
