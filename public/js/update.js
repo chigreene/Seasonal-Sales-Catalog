@@ -52,7 +52,7 @@ const formSubmitHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace("/u")
+            document.location.replace('/u');
         }
     }
     
