@@ -1,13 +1,4 @@
-:root {
-    --primary:#22503D;
-    --secondary: #8B4513;
-    --tertiary: #FFDB58;
-    --background:#FDD9B5;
-    --bold:800;
-    --raidus:8px;
-    --button-primary:#A52A2A;
-    --button-success:#347C3C;
-}
+
 
 /* Styling the Page */
 body{
@@ -58,5 +49,17 @@ color:var(--secondary)
 
  .btn-success:hover {
      background-color: var(--primary) !important;
-     border-color: white !important;
  }
+     
+ /* winter */
+ :root {
+     --primary: #1E90FF;
+     --secondary: #4169E1;
+     --tertiary: #B0E0E6;
+     --background: #F0F8FF;
+     --bold: 800;
+     --radius: 8px;
+     --button-primary: #4682B4;
+     --button-success: #87CEEB;
+ }
+
