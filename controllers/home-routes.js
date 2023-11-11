@@ -68,37 +68,6 @@ router.get('/seasons', checkLoginStatus, async (req, res) => {
     const itemData = await Item.findAll({});
     const items = itemData.map((item) => item.get({ plain: true }));
 
-    // if (!userIdData) {
-    //   // handle the case where no user is found
-    //   console.error("User not found");
-    //   return res.status(404).json({ error: "User not found" });
-    // }
-
-    // if (!req.session.userId) {
-    //   // handle the case where there is no user ID in the session
-    //   console.error("No user ID in session");
-    //   return res.status(401).json({ error: "No user logged in" });
-    // }
-
-    // const userReviewData = Review.findAll({
-    //   where: {
-    //     user_id: req.session.userId,
-    //   },
-    // });
-    // console.log(userReviewData);
-    // const userReviews = userReviewData.map((review) =>
-    //   review.get({ plain: true })
-    // );
-
-    // const userIdData = await User.findOne({
-    //   where: {
-    //     id: req.session.userId,
-    //   },
-    // });
-
-    // const userId = userIdData.map((user) => user.get({ plain: true }));
-    // console.log(userId);
-
     // Use Promise.all to fetch all reviews in parallel
     const [
       reviewsPumpkin,

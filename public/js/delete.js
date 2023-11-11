@@ -12,7 +12,7 @@ const delButtonHandler = async (event) => {
   console.log(id);
 
   if (id) {
-    const response = await fetch(`/user/delete/${id}`, {
+    const response = await fetch(`/api/post/delete/${id}`, {
       method: "DELETE",
     });
 

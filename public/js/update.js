@@ -41,7 +41,7 @@ const formSubmitHandler = async (event) => {
 
 
     if (id && reviewText) {
-        const response = await fetch(`/user/update/${id}`, {
+        const response = await fetch(`/api/post/update/${id}`, {
             method: "PUT",
             body: JSON.stringify({
                 review: reviewText,
@@ -53,6 +53,8 @@ const formSubmitHandler = async (event) => {
 
         if (response.ok) {
             document.location.replace('/u');
+        } else {
+            alert("failed to update review.")
         }
     }
     
