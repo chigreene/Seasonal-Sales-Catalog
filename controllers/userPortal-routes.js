@@ -43,7 +43,24 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// router.update("/update/:id");
+router.put("/update/:id", async (req, res) => {
+  try {
+    const reviewData = await Review.update(req.body, {
+      where: {
+        id: req.params.id,
+      }
+    })
+    if (!reviewData) {
+      res.status(404).json({
+        message: "No review found for this id!"
+      })
+      return;
+    }
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err)
+  }
+});
 
 router.delete("/delete/:id", async (req, res) => {
   try {
