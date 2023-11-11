@@ -14,7 +14,7 @@
       />
       <div class="card-body">
         <h5 class="card-title">{{item.name}}</h5>
-        <p class="card-text">Product description</p>
+        <p class="card-text">{{item.description}}</p>
       </div>
       <ul class="list-group list-group-flush">
         <h4>Reviews</h4>
@@ -36,22 +36,29 @@
   {{/each}}
 
 {{else if (check_equality season "winter")}}
-  {{#each items}}
+  {{#each items as |item|}}
+    <div>{{items}}</div>
     <div class="card" style="">
       <img
         class="card-img-top"
-        src="/images/{{this.filename}}"
+        src="/images/{{item.filename}}"
         alt="database image"
       />
       <div class="card-body">
-        <h5 class="card-title">{{this.name}}</h5>
-        <p class="card-text">Some quick example text to build on the card title
-          and make up the bulk of the card's content.</p>
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">{{item.description}}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <h4>Reviews</h4>
+        {{#each item.reviews as |review|}}
+            <li class="list-group-item">
+                </p>
+                    {{review.username}}:
+                <p>
+                    {{review.review}}
+                <p></p>  
+            </li>
+        {{/each}}
       </ul>
       <div class="card-body">
         <a href="#" class="card-link">Card link</a>
@@ -60,22 +67,29 @@
     </div>
   {{/each}}
 {{else if (check_equality season "spring")}}
-  {{#each items}}
+  {{#each items as |item|}}
+    <div>{{items}}</div>
     <div class="card" style="">
       <img
         class="card-img-top"
-        src="/images/{{this.filename}}"
+        src="/images/{{item.filename}}"
         alt="database image"
       />
       <div class="card-body">
-        <h5 class="card-title">{{this.name}}</h5>
-        <p class="card-text">Some quick example text to build on the card title
-          and make up the bulk of the card's content.</p>
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">{{item.description}}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <h4>Reviews</h4>
+        {{#each item.reviews as |review|}}
+            <li class="list-group-item">
+                </p>
+                    {{review.username}}:
+                <p>
+                    {{review.review}}
+                <p></p>  
+            </li>
+        {{/each}}
       </ul>
       <div class="card-body">
         <a href="#" class="card-link">Card link</a>
@@ -84,22 +98,29 @@
     </div>
   {{/each}}
 {{else if (check_equality season "summer")}}
-  {{#each items}}
+  {{#each items as |item|}}
+    <div>{{items}}</div>
     <div class="card" style="">
       <img
         class="card-img-top"
-        src="/images/{{this.filename}}"
+        src="/images/{{item.filename}}"
         alt="database image"
       />
       <div class="card-body">
-        <h5 class="card-title">{{this.name}}</h5>
-        <p class="card-text">Some quick example text to build on the card title
-          and make up the bulk of the card's content.</p>
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">{{item.description}}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <h4>Reviews</h4>
+        {{#each item.reviews as |review|}}
+            <li class="list-group-item">
+                </p>
+                    {{review.username}}:
+                <p>
+                    {{review.review}}
+                <p></p>  
+            </li>
+        {{/each}}
       </ul>
       <div class="card-body">
         <a href="#" class="card-link">Card link</a>
