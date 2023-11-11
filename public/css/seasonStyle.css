@@ -1,10 +1,25 @@
+.season-container {
+  padding: 4%;
+
+}
+
 .banner {
-  margin: 5% auto;
+  margin: 20px auto;
   display: flex;
   justify-content: space-evenly;
+  background-color: orange;
+  padding: 20px;
+  border-radius: 10px;
 }
 .banner button {
   height: fit-content;
+}
+
+.banner-btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: end; 
+  flex-direction: column;
 }
 
 .season-nav ul {
@@ -23,7 +38,7 @@
 }
 
 .item {
-  
+  margin: auto;
   overflow-y: auto;
   width: 400px;
   transition: 0.5s ease;
@@ -61,8 +76,10 @@
   background-color: darkorange;
   overflow-y: auto;
   width: 400px;
+  
   display: none;
   transition: 0.5s ease;
+  
 }
 
 .review:hover {
@@ -86,9 +103,7 @@
   margin: 20px auto;
 }
 
-.season-container {
-  padding: 4%;
-}
+
 
 .modal-backdrop.show {
   display: none;
@@ -126,7 +141,7 @@
     display: none; /* Make review visible */
     order: -1; /* Place review before item in the document flow */
     width: 500px; /* Take full width */
-    height: 300%;
+    height: 400px;
   }
 
   .item {
@@ -145,7 +160,7 @@
     display: none;
     order: -1; /* Place review before item in the document flow */
     width: 300px; /* Take full width */
-    height: 300%;
+    height: 400px;
   }
 
   .item {
@@ -155,4 +170,23 @@
 }
 
 
-/* Season Page Styling */
+/* One Season Page Styling */
+
+.onePage-header {
+   margin: 20px auto;
+   color: orange;
+  display: flex;
+  justify-content: space-between;
+  background-color: #22503d;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.onePage-product{
+   width: 90%;
+  height: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: auto;
+}

@@ -1,14 +1,15 @@
 <section class="banner">
     <h1 id="seasonSwitch">SEASON</h1>
     {{#if loggedIn}}
-    <button type="button" class="btn btn-primary" id="logout">
-        LOGOUT
-    </button>
-    <a href="/u">
-            <button type="button" class="btn btn-primary" id="logout">
-                View profile
-            </button>
-    </a>
+    <div class="banner-btn-container">
+        <button type="button" class="btn btn-primary" id="logout">
+            LOGOUT
+        </button>
+        <button type="button" class="btn btn-primary" id="viewProfile">
+            View profile
+        </button>
+    </div>
+    
 
     {{else}}
     <!-- Button trigger modal -->
