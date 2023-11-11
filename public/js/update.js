@@ -17,19 +17,19 @@ const updateButtonHandler = (event) => {
     const id = event.target.getAttribute('data-id');
     const updateForm = document.getElementById(`update-form-${id}`);
     if (updateForm) {
-        updateForm.style.display = 'block'
+        updateForm.style.display = 'block';
+        attachCancelEventHandler(id);
     }
 }
 
-const cancelButtonHandler = (event) => {
-    event.preventDefault();
-    const id = event.target.getAttribute('data-id');
-    const cancelButtons = document.querySelectorAll(".cancel-update");
-    const updateForm = document.getElementById(`update-form-${id}`)
-
-    cancelButtons.forEach(button => {
-        button.addEventListener("click", updateForm.style.display = 'none')
-    })
+const attachCancelEventHandler = (id) => {
+    const cancelButton = document.querySelector(`#update-form-${id} .cancel-update`);
+    if (cancelButton) {
+        cancelButton.addEventListener("click", () => {
+            const updateForm = document.getElementById(`update-form-${id}`);
+            updateForm.style.display = 'none';
+        });
+    }
 }
 
 const formSubmitHandler = async (event) => {
