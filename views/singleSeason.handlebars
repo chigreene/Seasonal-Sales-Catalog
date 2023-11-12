@@ -26,12 +26,43 @@
                     {{review.review}}
                 <p></p>  
             </li>
+            {{!-- update form --}}
+            <div
+            id="update-form-{{review.id}}"
+            class="update-form"
+            style="display:none;"
+            >
+            <form data-id="{{review.id}}">
+
+                <div class="form-group">
+                <label for="review-text-{{review.id}}">Review</label>
+                <textarea
+                    class="form-control"
+                    id="review-text-{{review.id}}"
+                    rows="3"
+                    required
+                >{{review.review}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit Update</button>
+                <button
+                type="button"
+                class="btn btn-secondary cancel-update"
+                >Cancel</button>
+            </form>
+            </div>
+            <!-- Update button -->
+            <button
+            data-id="{{this.id}}"
+            class="btn btn-warning updateButton"
+            >Update</button>
+
+            <!-- Delete button -->
+            <button
+            data-id="{{this.id}}"
+            class="deleteButton btn btn-danger"
+            >Delete</button>
         {{/each}}
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
+      </ul>      
     </div>
   {{/each}}
 
@@ -58,12 +89,43 @@
                     {{review.review}}
                 <p></p>  
             </li>
+            {{!-- update form --}}
+            <div
+            id="update-form-{{review.id}}"
+            class="update-form"
+            style="display:none;"
+            >
+            <form data-id="{{review.id}}">
+
+                <div class="form-group">
+                <label for="review-text-{{review.id}}">Review</label>
+                <textarea
+                    class="form-control"
+                    id="review-text-{{review.id}}"
+                    rows="3"
+                    required
+                >{{review.review}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit Update</button>
+                <button
+                type="button"
+                class="btn btn-secondary cancel-update"
+                >Cancel</button>
+            </form>
+            </div>
+            <!-- Update button -->
+            <button
+            data-id="{{this.id}}"
+            class="btn btn-warning updateButton"
+            >Update</button>
+
+            <!-- Delete button -->
+            <button
+            data-id="{{this.id}}"
+            class="deleteButton btn btn-danger"
+            >Delete</button>
         {{/each}}
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
+      </ul>      
     </div>
   {{/each}}
 {{else if (check_equality season "spring")}}
@@ -89,12 +151,43 @@
                     {{review.review}}
                 <p></p>  
             </li>
+            {{!-- update form --}}
+            <div
+            id="update-form-{{review.id}}"
+            class="update-form"
+            style="display:none;"
+            >
+            <form data-id="{{review.id}}">
+
+                <div class="form-group">
+                <label for="review-text-{{review.id}}">Review</label>
+                <textarea
+                    class="form-control"
+                    id="review-text-{{review.id}}"
+                    rows="3"
+                    required
+                >{{review.review}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit Update</button>
+                <button
+                type="button"
+                class="btn btn-secondary cancel-update"
+                >Cancel</button>
+            </form>
+            </div>
+            <!-- Update button -->
+            <button
+            data-id="{{this.id}}"
+            class="btn btn-warning updateButton"
+            >Update</button>
+
+            <!-- Delete button -->
+            <button
+            data-id="{{this.id}}"
+            class="deleteButton btn btn-danger"
+            >Delete</button>
         {{/each}}
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
+      </ul>      
     </div>
   {{/each}}
 {{else if (check_equality season "summer")}}
@@ -120,12 +213,46 @@
                     {{review.review}}
                 <p></p>  
             </li>
+            {{!-- update form --}}
+            <div
+            id="update-form-{{review.id}}"
+            class="update-form"
+            style="display:none;"
+            >
+            <form data-id="{{review.id}}">
+
+                <div class="form-group">
+                <label for="review-text-{{review.id}}">Review</label>
+                <textarea
+                    class="form-control"
+                    id="review-text-{{review.id}}"
+                    rows="3"
+                    required
+                >{{review.review}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit Update</button>
+                <button
+                type="button"
+                class="btn btn-secondary cancel-update"
+                >Cancel</button>
+            </form>
+            </div>
+            <!-- Update button -->
+            <button
+            data-id="{{this.id}}"
+            class="btn btn-warning updateButton"
+            >Update</button>
+
+            <!-- Delete button -->
+            <button
+            data-id="{{this.id}}"
+            class="deleteButton btn btn-danger"
+            >Delete</button>
         {{/each}}
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
+      </ul>      
     </div>
   {{/each}}
 {{/if}}
+
+<script src="/js/delete.js"></script>
+<script src="/js/update.js"></script>

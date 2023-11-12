@@ -186,7 +186,7 @@ router.get("/seasons/:season", checkLoginStatus, async (req, res) => {
       include: [
         {
           model: Review,
-          attributes: ["username", "review", "createdAt"],
+          attributes: ["id", "username", "review", "createdAt"],
         },
       ],
     });
