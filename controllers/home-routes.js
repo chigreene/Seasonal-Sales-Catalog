@@ -193,7 +193,13 @@ router.get("/seasons/:season", checkLoginStatus, async (req, res) => {
 
     const items = itemData.map((item) => item.get({ plain: true }));
 
-    res.render("singleSeason", { items, season });
+    res.render("singleSeason", {
+      items,
+      season,
+      sessionUsername: req.session.username,
+    });
+
+    console.log(req.session.username);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });

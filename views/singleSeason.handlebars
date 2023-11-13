@@ -175,17 +175,20 @@
                 >Cancel</button>
             </form>
             </div>
-            <!-- Update button -->
-            <button
-            data-id="{{this.id}}"
-            class="btn btn-warning updateButton"
-            >Update</button>
+            {{!-- if log in equals user name then render this --}}
+            {{#if (check_equality review.username ../../sessionUsername)}}
+              <!-- Update button -->
+              <button
+              data-id="{{this.id}}"
+              class="btn btn-warning updateButton"
+              >Update</button>
 
-            <!-- Delete button -->
-            <button
-            data-id="{{this.id}}"
-            class="deleteButton btn btn-danger"
-            >Delete</button>
+              <!-- Delete button -->
+              <button
+              data-id="{{this.id}}"
+              class="deleteButton btn btn-danger"
+              >Delete</button>
+            {{/if}}
         {{/each}}
       </ul>      
     </div>
