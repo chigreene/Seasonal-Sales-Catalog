@@ -21,17 +21,6 @@
         <h3>REVIEWS</h3>
         <div id="review-box" class="review-box">
             {{#each reviews}}
-                {{!-- <div id="review-card-{{../user.id}}" class="review-card">
-                    <h4>{{this.item.name}}</h4>
-                    <p>{{this.review}}</p>
-                    {{#if ../user.selected}}
-                        <div class="review-admin">
-                            <button class="review-edit-{{../user.id}}">Edit</button>
-                            <button class="review-delete-{{../user.id}}">Delete</button>
-                        </div>
-                    {{/if}}
-                </div> --}}
-                {{!-- {{> review selected=../user.selcted}} --}}
                 <div class="card mb-2">
                     <div class="card-body">
                         <h5 class="card-title">{{this.item.name}}</h5>

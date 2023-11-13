@@ -1,0 +1,277 @@
+<section class="onePage-header">
+  <h2>Holidays</h2>
+  <button id="seasonsButton" class="btn btn-primary">Return to Homepage</button>
+</section>
+
+{{#if (check_equality season "fall")}}
+  {{#each items as |item|}}
+    <div>{{items}}</div>
+    <div class="card" style="">
+      <img
+        class="card-img-top"
+        src="/images/{{item.filename}}"
+        alt="database image"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">{{item.description}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <h4>Reviews</h4>
+        {{#each item.reviews as |review|}}
+            <li class="list-group-item">
+                <p>
+                    {{review.username}}:
+                </p>
+                <p>
+                    {{review.review}}
+                </p>
+{{!-- if log in equals user name then render this --}}
+            {{#if (check_equality review.username ../../sessionUsername)}}
+              <!-- Update button -->
+              <button
+              data-id="{{this.id}}"
+              class="btn btn-warning updateButton"
+              >Update</button>
+
+              <!-- Delete button -->
+              <button
+              data-id="{{this.id}}"
+              class="deleteButton btn btn-danger"
+              >Delete</button>
+            {{/if}}
+            </li>
+            {{!-- update form --}}
+            <div
+            id="update-form-{{review.id}}"
+            class="update-form"
+            style="display:none;"
+            >
+            <form data-id="{{review.id}}">
+
+                <div class="form-group">
+                <label for="review-text-{{review.id}}">Review</label>
+                <textarea
+                    class="form-control"
+                    id="review-text-{{review.id}}"
+                    rows="3"
+                    required
+                >{{review.review}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit Update</button>
+                <button
+                type="button"
+                class="btn btn-secondary cancel-update"
+                >Cancel</button>
+            </form>
+            </div>
+            
+        {{/each}}
+      </ul>      
+    </div>
+  {{/each}}
+
+{{else if (check_equality season "winter")}}
+  {{#each items as |item|}}
+    <div>{{items}}</div>
+    <div class="card" style="">
+      <img
+        class="card-img-top"
+        src="/images/{{item.filename}}"
+        alt="database image"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">{{item.description}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <h4>Reviews</h4>
+        {{#each item.reviews as |review|}}
+            <li class="list-group-item">
+                <p>
+                    {{review.username}}:
+                </p>
+                <p>
+                    {{review.review}}
+                </p>
+{{!-- if log in equals user name then render this --}}
+            {{#if (check_equality review.username ../../sessionUsername)}}
+              <!-- Update button -->
+              <button
+              data-id="{{this.id}}"
+              class="btn btn-warning updateButton"
+              >Update</button>
+
+              <!-- Delete button -->
+              <button
+              data-id="{{this.id}}"
+              class="deleteButton btn btn-danger"
+              >Delete</button>
+            {{/if}} 
+            </li>
+            {{!-- update form --}}
+            <div
+            id="update-form-{{review.id}}"
+            class="update-form"
+            style="display:none;"
+            >
+            <form data-id="{{review.id}}">
+
+                <div class="form-group">
+                <label for="review-text-{{review.id}}">Review</label>
+                <textarea
+                    class="form-control"
+                    id="review-text-{{review.id}}"
+                    rows="3"
+                    required
+                >{{review.review}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit Update</button>
+                <button
+                type="button"
+                class="btn btn-secondary cancel-update"
+                >Cancel</button>
+            </form>
+            </div>
+        {{/each}}
+      </ul>      
+    </div>
+  {{/each}}
+{{else if (check_equality season "spring")}}
+  {{#each items as |item|}}
+    <div>{{items}}</div>
+    <div class="card" style="">
+      <img
+        class="card-img-top"
+        src="/images/{{item.filename}}"
+        alt="database image"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">{{item.description}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <h4>Reviews</h4>
+        {{#each item.reviews as |review|}}
+            <li class="list-group-item">
+                <p>
+                    {{review.username}}:
+                </p>
+                <p>
+                    {{review.review}}
+                </p>
+{{!-- if log in equals user name then render this --}}
+            {{#if (check_equality review.username ../../sessionUsername)}}
+              <!-- Update button -->
+              <button
+              data-id="{{this.id}}"
+              class="btn btn-warning updateButton"
+              >Update</button>
+
+              <!-- Delete button -->
+              <button
+              data-id="{{this.id}}"
+              class="deleteButton btn btn-danger"
+              >Delete</button>
+            {{/if}}
+            </li>
+            {{!-- update form --}}
+            <div
+            id="update-form-{{review.id}}"
+            class="update-form"
+            style="display:none;"
+            >
+            <form data-id="{{review.id}}">
+
+                <div class="form-group">
+                <label for="review-text-{{review.id}}">Review</label>
+                <textarea
+                    class="form-control"
+                    id="review-text-{{review.id}}"
+                    rows="3"
+                    required
+                >{{review.review}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit Update</button>
+                <button
+                type="button"
+                class="btn btn-secondary cancel-update"
+                >Cancel</button>
+            </form>
+            </div>
+        {{/each}}
+      </ul>      
+    </div>
+  {{/each}}
+{{else if (check_equality season "summer")}}
+  {{#each items as |item|}}
+    <div>{{items}}</div>
+    <div class="card" style="">
+      <img
+        class="card-img-top"
+        src="/images/{{item.filename}}"
+        alt="database image"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">{{item.description}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <h4>Reviews</h4>
+        {{#each item.reviews as |review|}}
+            <li class="list-group-item">
+                <p>
+                    {{review.username}}:
+                </p>
+                <p>
+                    {{review.review}}
+                </p>
+{{!-- if log in equals user name then render this --}}
+            {{#if (check_equality review.username ../../sessionUsername)}}
+              <!-- Update button -->
+              <button
+              data-id="{{this.id}}"
+              class="btn btn-warning updateButton"
+              >Update</button>
+
+              <!-- Delete button -->
+              <button
+              data-id="{{this.id}}"
+              class="deleteButton btn btn-danger"
+              >Delete</button>
+            {{/if}}
+
+            </li>
+            {{!-- update form --}}
+            <div
+            id="update-form-{{review.id}}"
+            class="update-form"
+            style="display:none;"
+            >
+            <form data-id="{{review.id}}">
+
+                <div class="form-group">
+                <label for="review-text-{{review.id}}">Review</label>
+                <textarea
+                    class="form-control"
+                    id="review-text-{{review.id}}"
+                    rows="3"
+                    required
+                >{{review.review}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit Update</button>
+                <button
+                type="button"
+                class="btn btn-secondary cancel-update"
+                >Cancel</button>
+            </form>
+            </div>
+            
+        {{/each}}
+      </ul>      
+    </div>
+  {{/each}}
+{{/if}}
+
+<script src="/js/delete.js"></script>
+<script src="/js/update.js"></script>
