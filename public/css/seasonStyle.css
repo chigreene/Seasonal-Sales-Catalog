@@ -173,6 +173,50 @@
   margin: 5px;
 }
 
+/* fixing inner carousel size */
+
+/* .inner-item-div {
+  margin: 0px auto;
+  width: 350px;
+  height: 350px;
+}
+
+.inner-item-div img {
+  width: 300px;
+  height: 350px;
+  
+} */
+
+@media (max-width: 1200px) {
+  .carousel-cell {
+    overflow-x: hidden;
+  }
+  .product {
+    width: 100%;
+    overflow: hidden;
+  }
+  .item {
+    width: 100%;
+  }
+
+  .inner-item-div {
+    margin: 0px auto;
+    width: 200px;
+    height: 350px;
+    padding: 5px;
+  }
+
+  .inner-item-div img {
+    width: 200px;
+    height: auto;
+    /* object-fit: cover;  */
+  }
+
+  .review {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   h1#seasonSwitch {
     text-align: center;
@@ -218,6 +262,34 @@
   .onePage-header h2 {
     text-align: center;
     font-size: 48px;
+  }
+  /* fixing inner carousel size */
+  .carousel-cell {
+    overflow-x: hidden;
+  }
+  .product {
+    width: 100%;
+    overflow: hidden;
+  }
+  .item {
+    width: 100%;
+  }
+
+  .inner-item-div {
+    margin: 0px auto;
+    width: 200px;
+    height: 350px;
+    padding: 5px;
+  }
+
+  .inner-item-div img {
+    width: 200px;
+    height: auto;
+    /* object-fit: cover;  */
+  }
+
+  .review {
+    width: 100%;
   }
 }
 
@@ -294,12 +366,32 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 376px) {
+  .carousel-cell {
+    overflow-x: hidden;
+  }
   .product {
     width: 100%;
     overflow: hidden;
   }
   .item {
+    width: 100%;
+  }
+
+  .inner-item-div {
+    margin: 0px auto;
+    width: 200px;
+    height: 350px;
+    padding: 5px;
+  }
+
+  .inner-item-div img {
+    width: 200px;
+    height: auto;
+    /* object-fit: cover;  */
+  }
+
+  .review {
     width: 100%;
   }
 }
