@@ -166,6 +166,7 @@
   background-color: #8b4513;
   color: #fdd9b5;
   padding: 10px 20px;
+  margin: 5px;
 }
 
 @media (max-width: 426px) {

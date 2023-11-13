@@ -20,11 +20,26 @@
         <h4>Reviews</h4>
         {{#each item.reviews as |review|}}
             <li class="list-group-item">
-                </p>
+                <p>
                     {{review.username}}:
+                </p>
                 <p>
                     {{review.review}}
-                <p></p>  
+                </p>
+{{!-- if log in equals user name then render this --}}
+            {{#if (check_equality review.username ../../sessionUsername)}}
+              <!-- Update button -->
+              <button
+              data-id="{{this.id}}"
+              class="btn btn-warning updateButton"
+              >Update</button>
+
+              <!-- Delete button -->
+              <button
+              data-id="{{this.id}}"
+              class="deleteButton btn btn-danger"
+              >Delete</button>
+            {{/if}}
             </li>
             {{!-- update form --}}
             <div
@@ -50,17 +65,7 @@
                 >Cancel</button>
             </form>
             </div>
-            <!-- Update button -->
-            <button
-            data-id="{{this.id}}"
-            class="btn btn-warning updateButton"
-            >Update</button>
-
-            <!-- Delete button -->
-            <button
-            data-id="{{this.id}}"
-            class="deleteButton btn btn-danger"
-            >Delete</button>
+            
         {{/each}}
       </ul>      
     </div>
@@ -83,11 +88,26 @@
         <h4>Reviews</h4>
         {{#each item.reviews as |review|}}
             <li class="list-group-item">
-                </p>
+                <p>
                     {{review.username}}:
+                </p>
                 <p>
                     {{review.review}}
-                <p></p>  
+                </p>
+{{!-- if log in equals user name then render this --}}
+            {{#if (check_equality review.username ../../sessionUsername)}}
+              <!-- Update button -->
+              <button
+              data-id="{{this.id}}"
+              class="btn btn-warning updateButton"
+              >Update</button>
+
+              <!-- Delete button -->
+              <button
+              data-id="{{this.id}}"
+              class="deleteButton btn btn-danger"
+              >Delete</button>
+            {{/if}} 
             </li>
             {{!-- update form --}}
             <div
@@ -113,17 +133,6 @@
                 >Cancel</button>
             </form>
             </div>
-            <!-- Update button -->
-            <button
-            data-id="{{this.id}}"
-            class="btn btn-warning updateButton"
-            >Update</button>
-
-            <!-- Delete button -->
-            <button
-            data-id="{{this.id}}"
-            class="deleteButton btn btn-danger"
-            >Delete</button>
         {{/each}}
       </ul>      
     </div>
@@ -145,11 +154,26 @@
         <h4>Reviews</h4>
         {{#each item.reviews as |review|}}
             <li class="list-group-item">
-                </p>
+                <p>
                     {{review.username}}:
+                </p>
                 <p>
                     {{review.review}}
-                <p></p>  
+                </p>
+{{!-- if log in equals user name then render this --}}
+            {{#if (check_equality review.username ../../sessionUsername)}}
+              <!-- Update button -->
+              <button
+              data-id="{{this.id}}"
+              class="btn btn-warning updateButton"
+              >Update</button>
+
+              <!-- Delete button -->
+              <button
+              data-id="{{this.id}}"
+              class="deleteButton btn btn-danger"
+              >Delete</button>
+            {{/if}}
             </li>
             {{!-- update form --}}
             <div
@@ -175,20 +199,6 @@
                 >Cancel</button>
             </form>
             </div>
-            {{!-- if log in equals user name then render this --}}
-            {{#if (check_equality review.username ../../sessionUsername)}}
-              <!-- Update button -->
-              <button
-              data-id="{{this.id}}"
-              class="btn btn-warning updateButton"
-              >Update</button>
-
-              <!-- Delete button -->
-              <button
-              data-id="{{this.id}}"
-              class="deleteButton btn btn-danger"
-              >Delete</button>
-            {{/if}}
         {{/each}}
       </ul>      
     </div>
@@ -210,11 +220,27 @@
         <h4>Reviews</h4>
         {{#each item.reviews as |review|}}
             <li class="list-group-item">
-                </p>
+                <p>
                     {{review.username}}:
+                </p>
                 <p>
                     {{review.review}}
-                <p></p>  
+                </p>
+{{!-- if log in equals user name then render this --}}
+            {{#if (check_equality review.username ../../sessionUsername)}}
+              <!-- Update button -->
+              <button
+              data-id="{{this.id}}"
+              class="btn btn-warning updateButton"
+              >Update</button>
+
+              <!-- Delete button -->
+              <button
+              data-id="{{this.id}}"
+              class="deleteButton btn btn-danger"
+              >Delete</button>
+            {{/if}}
+
             </li>
             {{!-- update form --}}
             <div
@@ -240,17 +266,7 @@
                 >Cancel</button>
             </form>
             </div>
-            <!-- Update button -->
-            <button
-            data-id="{{this.id}}"
-            class="btn btn-warning updateButton"
-            >Update</button>
-
-            <!-- Delete button -->
-            <button
-            data-id="{{this.id}}"
-            class="deleteButton btn btn-danger"
-            >Delete</button>
+            
         {{/each}}
       </ul>      
     </div>
