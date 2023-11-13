@@ -169,31 +169,17 @@
   margin: 5px;
 }
 
-@media (max-width: 426px) {
-  .product {
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
+@media (max-width: 768px) {
+  h1#seasonSwitch {
+    text-align: center;
+    font-size: 82px;
   }
 
-  .review {
-    display: none;
-    order: -1; /* Place review before item in the document flow */
-    width: 300px; /* Take full width */
-    height: 300%;
+  .banner-btn-container {
+    display: flex;
+    flex-direction: row;
   }
 
-  .item {
-    width: 300px; /* Take full width */
-    order: 1; /* Ensures that item comes after review */
-  }
-  /* .card {
-    width: 400px;
-    margin: auto;
-  } */
-}
-
-@media (max-width: 1200px) {
   .product {
     flex-direction: column;
     width: 500px;
@@ -214,6 +200,45 @@
 
   /* .card {
     width: 800px;
+    margin: auto;
+  } */
+}
+
+@media (max-width: 426px) {
+  h1#seasonSwitch {
+    font-size: 48px;
+  }
+
+  .season-nav {
+    justify-content: space-evenly;
+  }
+  .btn.btn-lg {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .season-container {
+    display: none;
+  }
+  .product {
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+  }
+
+  .review {
+    display: none;
+    order: -1; /* Place review before item in the document flow */
+    width: 300px; /* Take full width */
+    height: 300%;
+  }
+
+  .item {
+    width: 300px; /* Take full width */
+    order: 1; /* Ensures that item comes after review */
+  }
+  /* .card {
+    width: 400px;
     margin: auto;
   } */
 }
