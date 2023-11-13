@@ -234,13 +234,16 @@
     font-size: 14px;
   }
 
-  .season-container {
+  /* .season-container {
     display: none;
-  }
+  } */
   .product {
     flex-direction: column;
-    width: 300px;
+    width: 100%;
     margin: auto;
+  }
+  .item {
+    width: 100%;
   }
 
   .review {
@@ -276,6 +279,15 @@
     margin: auto;
   }
   .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .product {
+    width: 100%;
+  }
+  .item {
     width: 100%;
   }
 }
