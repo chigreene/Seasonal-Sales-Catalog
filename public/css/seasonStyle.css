@@ -176,7 +176,7 @@
 @media (max-width: 768px) {
   h1#seasonSwitch {
     text-align: center;
-    font-size: 82px;
+    font-size: 56px;
   }
 
   .banner-btn-container {
@@ -222,8 +222,18 @@
 }
 
 @media (max-width: 426px) {
+  .carousel {
+    width: 100%;
+  }
+  .carousel-cell {
+    overflow-x: hidden;
+  }
+  .product,
+  .item {
+    width: 100%;
+  }
   h1#seasonSwitch {
-    font-size: 48px;
+    font-size: 36px;
   }
 
   .season-nav {
@@ -241,6 +251,7 @@
     flex-direction: column;
     width: 100%;
     margin: auto;
+    overflow: hidden;
   }
   .item {
     width: 100%;
@@ -286,6 +297,7 @@
 @media (max-width: 375px) {
   .product {
     width: 100%;
+    overflow: hidden;
   }
   .item {
     width: 100%;
