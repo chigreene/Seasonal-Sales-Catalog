@@ -51,15 +51,14 @@ color:var(--secondary)
      background-color: var(--primary) !important;
  }
      
- /* winter */
+/* Fall */
  :root {
-     --primary: #1E90FF;
-     --secondary: #4169E1;
-     --tertiary: #B0E0E6;
-     --background: #F0F8FF;
+     --primary: #22503D;
+     --secondary: #8B4513;
+     --tertiary: #FFDB58;
+     --background: #FDD9B5;
      --bold: 800;
-     --radius: 8px;
-     --button-primary: #4682B4;
-     --button-success: #87CEEB;
+     --radius: 8px;  
+     --button-primary: #A52A2A;
+     --button-success: #347C3C;
  }
-

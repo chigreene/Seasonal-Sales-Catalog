@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-var currentDate = new Date(2024, 0, 1);
+// var currentDate = new Date(2024, 0, 1);
+var currentDate = new Date();
 let currentSeason;
 
 const springStyle = `
@@ -80,7 +81,7 @@ seasons.push(Spring, Summer, Fall, Winter);
 function changeStyleSheet(season) {
 
 
-    fs.readFile('../public/css/loginStyle.css', 'utf8', (err, data) => {
+    fs.readFile('public/css/loginStyle.css', 'utf8', (err, data) => {
         if (err) {
             console.error('Error reading the file:', err);
             return;
@@ -141,7 +142,7 @@ color:var(--secondary)
         const addedStyle = original + season;
 
         // Write the modified content back to the file
-        fs.writeFile('../public/css/loginStyle.css', addedStyle, 'utf8', (err) => {
+        fs.writeFile('public/css/loginStyle.css', addedStyle, 'utf8', (err) => {
             if (err) {
                 console.error('Error writing the file:', err);
                 return;
