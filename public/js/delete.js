@@ -12,12 +12,12 @@ const delButtonHandler = async (event) => {
   console.log(id);
 
   if (id) {
-    const response = await fetch(`/user/delete/${id}`, {
+    const response = await fetch(`/api/post/delete/${id}`, {
       method: "DELETE",
     });
 
     if (response.ok) {
-      document.location.replace("/u");
+      document.location.reload();
     } else {
       alert("Failed to delete review");
     }

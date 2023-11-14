@@ -1,6 +1,7 @@
 <div id="profile-body" class="profile-body">
     <div id="profile-username" class="profile-username">
         <h2>{{user.user_name}}</h2>
+        <button id="seasonsButton" class="btn btn-primary">Return to Homepage</button>
     </div>
     <div id="favorites" class="favorites">
         <h3>FAVORITES</h3>
@@ -20,17 +21,6 @@
         <h3>REVIEWS</h3>
         <div id="review-box" class="review-box">
             {{#each reviews}}
-                {{!-- <div id="review-card-{{../user.id}}" class="review-card">
-                    <h4>{{this.item.name}}</h4>
-                    <p>{{this.review}}</p>
-                    {{#if ../user.selected}}
-                        <div class="review-admin">
-                            <button class="review-edit-{{../user.id}}">Edit</button>
-                            <button class="review-delete-{{../user.id}}">Delete</button>
-                        </div>
-                    {{/if}}
-                </div> --}}
-                {{!-- {{> review selected=../user.selcted}} --}}
                 <div class="card mb-2">
                     <div class="card-body">
                         <h5 class="card-title">{{this.item.name}}</h5>
@@ -38,7 +28,6 @@
                         <p class="card-text"><small class="text-muted">Posted on
                             {{this.createdAt}}</small></p>
 
-                        <!-- Update form (initially hidden) -->
                         <div
                         id="update-form-{{this.id}}"
                         class="update-form"
@@ -85,4 +74,4 @@
 </div>
 
 <script src="/js/delete.js"></script>
-{{!-- <script src="/js/update.js"></script> --}}
+<script src="/js/update.js"></script>

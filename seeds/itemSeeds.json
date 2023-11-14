@@ -2,41 +2,49 @@
   {
     "name": "Jack-O-Lantern",
     "filename": "jackolantern.jpg",
-    "season": "fall"
+    "season": "fall",
+    "description": "Halloween's Glowing Heartbeat: Illuminate your Halloween night with our hand-crafted Jack-O-Lantern! Made from a real pumpkin, each piece is uniquely carved with a classic, grinning face that glows warmly when lit. The interior is hollowed out and smoothed, ready for a candle or LED light. This iconic decoration not only brings the spirit of Halloween to your doorstep but also serves as a beacon for trick-or-treaters and a centerpiece for spooky celebrations."
   },
   {
     "name": "Reeses Candy",
     "filename": "reeses.jpg",
-    "season": "fall"
+    "season": "fall",
+    "description": "A Sweet Symphony of Peanut Butter and Chocolate: Satisfy your sweet tooth with our Reese's Candy Bag, overflowing with the irresistible combination of creamy peanut butter and rich milk chocolate. Each bag contains an assortment of Reese's favorites, including Peanut Butter Cups, Pieces, and Miniatures, all individually wrapped. Perfect for sharing at parties, treating yourself, or as a delightful surprise for the peanut butter enthusiast in your life."
   },
   {
     "name": "skeletons.jpg",
     "filename": "skeletons.jpg",
-    "season": "fall"
+    "season": "fall",
+    "description": "Spine-Tingling Decor with an Educational Twist: Introducing our life-size Skeleton Manikin, the perfect blend of eerie decor and anatomical accuracy. Standing at 5 feet 6 inches, this model features articulating limbs and a movable jaw, allowing for various haunting poses. Made from durable, high-quality plastic, it's ideal for Halloween displays, educational purposes in classrooms, or as a unique addition to your home's year-round decor. Its detailed bones and joints make it not only a spooky addition but an educational tool as well."
   },
   {
     "name": "Witches Hat",
     "filename": "witches-hat.jpg",
-    "season": "fall"
+    "season": "fall",
+    "description": "Classic Elegance Meets Mystical Charm: Dive into the world of magic with our enchanting Witch's Hat! Crafted from premium-quality black velvet, this hat boasts a wide brim and a towering, conical design, perfect for adding a touch of mystery to any costume. Embellished with a silken purple ribbon and a glittering buckle, it's not just a hat, but a gateway to a world of fantasy. Ideal for Halloween, themed parties, or any event where you want to cast a spell of style!"
   },
   {
     "name": "Dreidal",
     "filename": "dreidal.jpg",
-    "season": "winter"
+    "season": "winter",
+    "description": "A Timeless Token of Celebration and Fun: Celebrate the festival of lights with our beautifully crafted Dreidel. Made from high-quality wood and elegantly painted, each side of the dreidel displays a Hebrew letter - Nun, Gimel, Hei, and Shin. This traditional spinning top is not just a game; it's a symbol of history and culture. Whether used for play during Hanukkah or as a meaningful gift, our dreidel is sure to add joy and tradition to your holiday season."
   },
   {
     "name": "Christmas Tree",
     "filename": "christmas-tree.jpg",
-    "season": "winter"
+    "season": "winter",
+    "description": "Twinkling Festivity in Every Branch: Embrace the holiday spirit with our pre-lit Fake Christmas Tree, a seamless blend of convenience and festivity. Standing tall at 6 feet, this artificial tree features lush, life-like greenery that remains fresh and vibrant throughout the season. Pre-strung with hundreds of warm white LED lights, it illuminates any room with a cozy, festive glow. Easy to assemble and disassemble, this tree is not only a stunning centerpiece for your holiday decor but also a hassle-free solution to bring Christmas cheer year after year."
   },
   {
     "name": "Darth Vadar Figurine",
     "filename": "may4th.jpg",
-    "season": "spring"
+    "season": "spring",
+    "description": "A Must-Have for Galactic Collectors: Command the attention of any room with our meticulously crafted Darth Vader Figurine. Standing at 6 inches tall, this imposing figure captures the essence of the iconic Sith Lord from the Star Wars saga. Made from high-quality materials, the figurine showcases intricate details, from the textured suit to the signature helmet and cape. Perfect for display on a shelf or desk, it's a striking piece for any Star Wars enthusiast, offering a touch of the dark side to your collection."
   },
   {
     "name": "Fourth of July Hat",
     "filename": "july4th.jpg",
-    "season": "summer"
+    "season": "summer",
+    "description": "Patriotic Flair for Celebratory Occasions: Show off your American pride with our vibrant Fourth of July Hat! This eye-catching accessory is designed with a playful mix of red, white, and blue, adorned with stars and stripes to embody the spirit of Independence Day. Made from lightweight, breathable material, it ensures comfort during summer festivities. Whether you're watching fireworks, attending a parade, or hosting a barbecue, this hat is the perfect addition to your patriotic ensemble, sure to draw smiles and compliments."
   }
 ]
