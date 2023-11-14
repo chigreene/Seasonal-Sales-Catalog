@@ -173,10 +173,54 @@
   margin: 5px;
 }
 
+/* fixing inner carousel size */
+
+/* .inner-item-div {
+  margin: 0px auto;
+  width: 350px;
+  height: 350px;
+}
+
+.inner-item-div img {
+  width: 300px;
+  height: 350px;
+  
+} */
+
+@media (max-width: 1200px) {
+  .carousel-cell {
+    overflow-x: hidden;
+  }
+  .product {
+    width: 100%;
+    overflow: hidden;
+  }
+  .item {
+    width: 100%;
+  }
+
+  .inner-item-div {
+    margin: 0px auto;
+    width: 200px;
+    height: 350px;
+    padding: 5px;
+  }
+
+  .inner-item-div img {
+    width: 200px;
+    height: auto;
+    /* object-fit: cover;  */
+  }
+
+  .review {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   h1#seasonSwitch {
     text-align: center;
-    font-size: 82px;
+    font-size: 56px;
   }
 
   .banner-btn-container {
@@ -219,11 +263,49 @@
     text-align: center;
     font-size: 48px;
   }
+  /* fixing inner carousel size */
+  .carousel-cell {
+    overflow-x: hidden;
+  }
+  .product {
+    width: 100%;
+    overflow: hidden;
+  }
+  .item {
+    width: 100%;
+  }
+
+  .inner-item-div {
+    margin: 0px auto;
+    width: 200px;
+    height: 350px;
+    padding: 5px;
+  }
+
+  .inner-item-div img {
+    width: 200px;
+    height: auto;
+    /* object-fit: cover;  */
+  }
+
+  .review {
+    width: 100%;
+  }
 }
 
 @media (max-width: 426px) {
+  .carousel {
+    width: 100%;
+  }
+  .carousel-cell {
+    overflow-x: hidden;
+  }
+  .product,
+  .item {
+    width: 100%;
+  }
   h1#seasonSwitch {
-    font-size: 48px;
+    font-size: 36px;
   }
 
   .season-nav {
@@ -241,6 +323,7 @@
     flex-direction: column;
     width: 100%;
     margin: auto;
+    overflow: hidden;
   }
   .item {
     width: 100%;
@@ -283,11 +366,32 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 376px) {
+  .carousel-cell {
+    overflow-x: hidden;
+  }
   .product {
     width: 100%;
+    overflow: hidden;
   }
   .item {
+    width: 100%;
+  }
+
+  .inner-item-div {
+    margin: 0px auto;
+    width: 200px;
+    height: 350px;
+    padding: 5px;
+  }
+
+  .inner-item-div img {
+    width: 200px;
+    height: auto;
+    /* object-fit: cover;  */
+  }
+
+  .review {
     width: 100%;
   }
 }
