@@ -27,5 +27,5 @@ function scrollerAnimation() {
   }
 
 }
-
-export { scrollerAnimation }
+scrollerAnimation()
+// export { scrollerAnimation }

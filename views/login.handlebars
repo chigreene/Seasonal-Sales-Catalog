@@ -6,16 +6,15 @@
 <div class="scroller-container">
     <div class="scroller" data-direction="right" data-speed="slow">
         <div class="scroller__inner">
-
+    {{#each items}}
+    <img {{!-- refractor to img-{{id}} --}} id="item-{{id}}" class="custom-hover" src="/images/{{filename}}"
+        alt="dataBase Image" />
+    {{/each}}
         </div>
     </div>
 </div>
 </seciton>
-<script type='module'src="/js/seasonSwitch.js"></script>
-<script src="/js/login.js"></script>
-<script type="module" src="/js/scroller.js"></script>
-{{!-- 
-add a data attribute to div with the class scroller-inner this data attribute will have varibale that comes from the server 
-this variable will send items based on the season
 
-to make it get the speicifc season the login route will have a parameter  --}}
+<script src="/js/login.js"></script>
+<script  src="/js/scroller.js"></script>
+
