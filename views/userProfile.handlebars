@@ -11,7 +11,7 @@
                 <img src="/images/{{this.item.filename}}" alt="dataBase Image" style="width: 300px; height: 350px;">
                 <h4>{{this.item.name}}</h4>
                 {{#if ../user.selected}}
-                    <button id="profile-unfavorite-{{../user.id}}" class="profile-unfavorite">Unfavorite</button>
+                    <button id="profile-unfavorite-{{../user.id}}" class="profile-unfavorite unfavorite" data-id="{{this.id}}">Unfavorite</button>
                 {{/if}}
             </div>
         {{/each}}
@@ -75,3 +75,4 @@
 
 <script src="/js/delete.js"></script>
 <script src="/js/update.js"></script>
+<script src="/js/deleteFavorite.js"></script>
