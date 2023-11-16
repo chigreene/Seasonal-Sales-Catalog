@@ -179,8 +179,32 @@ router.get("/user/:id", async (req, res) => {
 // Move the catch-all route to the end
 router.get("/seasons/:season", checkLoginStatus, async (req, res) => {
   try {
-    const season = req.params.season;
 
+    const season = req.params.season;
+    function getSeasonStylesheet(season) {
+      let seasonSheet;
+
+      switch (season) {
+        case 'winter':
+          seasonSheet = '/css/winterStyle.css';
+          break;
+        case 'spring':
+          seasonSheet = '/css/springStyle.css';
+          break;
+        case 'summer':
+          seasonSheet = '/css/summerStyle.css';
+          break;
+        case 'fall':
+          seasonSheet = '/css/fallStyle.css';
+          break;
+        default:
+          // Handle default case if necessary
+          // For instance, if none of the known seasons match the input
+          break;
+      }
+
+      return seasonSheet;
+    }
     const itemData = await Item.findAll({
       where: {
         season: season,
@@ -199,7 +223,7 @@ router.get("/seasons/:season", checkLoginStatus, async (req, res) => {
       items,
       season,
       sessionUsername: req.session.username,
-      currentStylesheet: currentSeason.stylesheet
+      currentStylesheet:getSeasonStylesheet(season)
     });
 
     console.log(req.session.username);
