@@ -1,3 +1,14 @@
+/* Fall */
+:root {
+  --primary: #22503D;
+  --secondary: #8B4513;
+  --tertiary: #FFDB58;
+  --background: #FDD9B5;
+  --bold: 800;
+  --radius: 8px;
+  --button-primary: #A52A2A;
+  --button-success: #347C3C;
+}
 
 /* Styling the Page */
 body {
@@ -32,6 +43,25 @@ body {
   border-radius: var(--raidus);
 }
 
+.banner {
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-evenly;
+  background-color:var(--tertiary);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.banner button {
+  height: fit-content;
+}
+
+.banner-btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: end;
+  flex-direction: column;
+}
 /* Changing BootStrap Buttons */
 .btn-primary {
   background-color: var(--button-primary);
@@ -51,18 +81,6 @@ body {
      background-color: var(--primary) !important;
  }
      
-/* Fall */
- :root {
-     --primary: #22503D;
-     --secondary: #8B4513;
-     --tertiary: #FFDB58;
-     --background: #FDD9B5;
-     --bold: 800;
-     --radius: 8px;  
-     --button-primary: #A52A2A;
-     --button-success: #347C3C;
- }
-
 .btn-success:hover {
   background-color: var(--primary) !important;
   border-color: white !important;

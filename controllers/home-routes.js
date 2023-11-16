@@ -32,7 +32,7 @@ router.get('/login', async (req, res) => {
   try {
     const itemData = await Item.findAll({
       where: {
-        season: currentSeason,
+        season: currentSeason.season,
       },
     });
     const items = itemData.map((item) => item.get({ plain: true }));
@@ -40,6 +40,7 @@ router.get('/login', async (req, res) => {
     res.render("login", {
       loggedIn: req.session.loggedIn,
       items,
+      currentStylesheet:currentSeason.stylesheet
     });
 
     if (req.session.loggedIn) {
@@ -52,7 +53,7 @@ router.get('/login', async (req, res) => {
 
 router.get("/login/recover", (req, res) => {
   try {
-    res.status(200).render("loginRecover");
+    res.status(200).render("loginRecover", { currentStylesheet: currentSeason.stylesheet });
   } catch (err) {
     res.status(500).json("unable to fufill request");
   }
@@ -86,7 +87,7 @@ router.get("/seasons", checkLoginStatus, async (req, res) => {
 
     res.render("seasons", {
       items,
-
+      currentStylesheet: currentSeason.stylesheet,
       reviewsPumpkin,
       reviewsReeses,
       reviewsSkeleton,
@@ -120,7 +121,7 @@ router.get("/user", async (req, res) => {
 
     res
       .status(200)
-      .render("userPortal", { user, loggedIn: req.session.loggedIn });
+      .render("userPortal", { user, loggedIn: req.session.loggedIn, currentStylesheet: currentSeason.stylesheet });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -142,7 +143,7 @@ router.get("user/:id", async (req, res) => {
 
     res
       .status(200)
-      .render("userPortal", { reviews, loggedIn: req.session.loggedIn });
+      .render("userPortal", { reviews, loggedIn: req.session.loggedIn, currentStylesheet: currentSeason.stylesheet });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -178,8 +179,32 @@ router.get("/user/:id", async (req, res) => {
 // Move the catch-all route to the end
 router.get("/seasons/:season", checkLoginStatus, async (req, res) => {
   try {
-    const season = req.params.season;
 
+    const season = req.params.season;
+    function getSeasonStylesheet(season) {
+      let seasonSheet;
+
+      switch (season) {
+        case 'winter':
+          seasonSheet = '/css/winterStyle.css';
+          break;
+        case 'spring':
+          seasonSheet = '/css/springStyle.css';
+          break;
+        case 'summer':
+          seasonSheet = '/css/summerStyle.css';
+          break;
+        case 'fall':
+          seasonSheet = '/css/fallStyle.css';
+          break;
+        default:
+          // Handle default case if necessary
+          // For instance, if none of the known seasons match the input
+          break;
+      }
+
+      return seasonSheet;
+    }
     const itemData = await Item.findAll({
       where: {
         season: season,
@@ -198,6 +223,7 @@ router.get("/seasons/:season", checkLoginStatus, async (req, res) => {
       items,
       season,
       sessionUsername: req.session.username,
+      currentStylesheet:getSeasonStylesheet(season)
     });
 
     console.log(req.session.username);

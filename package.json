@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "start": "node utils/seasonSwitch.js && node server.js ",
+    "start": " node server.js ",
     "seed": "node seeds/index.js",
     "dev": "nodemon server.js"
   },
