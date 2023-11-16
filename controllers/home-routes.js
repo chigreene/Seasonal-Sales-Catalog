@@ -32,7 +32,7 @@ router.get('/login', async (req, res) => {
   try {
     const itemData = await Item.findAll({
       where: {
-        season: currentSeason,
+        season: currentSeason.season,
       },
     });
     const items = itemData.map((item) => item.get({ plain: true }));
@@ -40,6 +40,7 @@ router.get('/login', async (req, res) => {
     res.render("login", {
       loggedIn: req.session.loggedIn,
       items,
+      currentStylesheet:currentSeason.stylesheet
     });
 
     if (req.session.loggedIn) {
