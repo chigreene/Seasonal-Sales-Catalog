@@ -1,8 +1,7 @@
 const User = require("../models/user");
 const Item = require("../models/item");
 const Review = require("../models/review");
-let currentSeason=require('../utils/seasonSwitch.js')
-
+let currentSeason = require("../utils/seasonSwitch.js");
 
 const router = require("express").Router();
 
@@ -25,9 +24,7 @@ const checkLoginStatus = (req, res, next) => {
   }
 };
 
-
-
-router.get('/login', async (req, res) => {
+router.get("/login", async (req, res) => {
   //const currentDate = new Date();
   try {
     const itemData = await Item.findAll({
@@ -40,20 +37,23 @@ router.get('/login', async (req, res) => {
     res.render("login", {
       loggedIn: req.session.loggedIn,
       items,
-      currentStylesheet:currentSeason.stylesheet
+      currentStylesheet: currentSeason.stylesheet,
     });
 
     if (req.session.loggedIn) {
       res.redirect("/seasons");
     }
   } catch (err) {
+    console.error(err);
     res.status(500).json("unable to fufill request");
   }
 });
 
 router.get("/login/recover", (req, res) => {
   try {
-    res.status(200).render("loginRecover", { currentStylesheet: currentSeason.stylesheet });
+    res
+      .status(200)
+      .render("loginRecover", { currentStylesheet: currentSeason.stylesheet });
   } catch (err) {
     res.status(500).json("unable to fufill request");
   }
@@ -119,9 +119,11 @@ router.get("/user", async (req, res) => {
 
     const user = userIdData.get({ plain: true });
 
-    res
-      .status(200)
-      .render("userPortal", { user, loggedIn: req.session.loggedIn, currentStylesheet: currentSeason.stylesheet });
+    res.status(200).render("userPortal", {
+      user,
+      loggedIn: req.session.loggedIn,
+      currentStylesheet: currentSeason.stylesheet,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -141,9 +143,11 @@ router.get("user/:id", async (req, res) => {
     });
     const reviews = reviewData.map((review) => review.get({ plain: true }));
 
-    res
-      .status(200)
-      .render("userPortal", { reviews, loggedIn: req.session.loggedIn, currentStylesheet: currentSeason.stylesheet });
+    res.status(200).render("userPortal", {
+      reviews,
+      loggedIn: req.session.loggedIn,
+      currentStylesheet: currentSeason.stylesheet,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -179,23 +183,22 @@ router.get("/user/:id", async (req, res) => {
 // Move the catch-all route to the end
 router.get("/seasons/:season", checkLoginStatus, async (req, res) => {
   try {
-
     const season = req.params.season;
     function getSeasonStylesheet(season) {
       let seasonSheet;
 
       switch (season) {
-        case 'winter':
-          seasonSheet = '/css/winterStyle.css';
+        case "winter":
+          seasonSheet = "/css/winterStyle.css";
           break;
-        case 'spring':
-          seasonSheet = '/css/springStyle.css';
+        case "spring":
+          seasonSheet = "/css/springStyle.css";
           break;
-        case 'summer':
-          seasonSheet = '/css/summerStyle.css';
+        case "summer":
+          seasonSheet = "/css/summerStyle.css";
           break;
-        case 'fall':
-          seasonSheet = '/css/fallStyle.css';
+        case "fall":
+          seasonSheet = "/css/fallStyle.css";
           break;
         default:
           // Handle default case if necessary
@@ -223,7 +226,7 @@ router.get("/seasons/:season", checkLoginStatus, async (req, res) => {
       items,
       season,
       sessionUsername: req.session.username,
-      currentStylesheet:getSeasonStylesheet(season)
+      currentStylesheet: getSeasonStylesheet(season),
     });
 
     console.log(req.session.username);
