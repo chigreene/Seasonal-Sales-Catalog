@@ -39,6 +39,9 @@ const Fall = new Season(
   new Date(year, 11, 20),
   fallStyle
 );
+const Winter = Season(
+  "Winter",
+  new Date(year, 11, 21),
   new Date(year + 1, 2, 19),
   winterStyle
 );
