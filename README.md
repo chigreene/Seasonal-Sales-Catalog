@@ -16,7 +16,7 @@ Seasonal sales catalog is a website that gives viewers the ability to view produ
 
 - [Description](#description)
 - [Table of Contents](#table-of-contents)
-- [Installation](#installation)
+- [Installation](#installation)Seas
 - [Usage](#usage)
 - [License](#license)
 - [Contributing](#contributing)
